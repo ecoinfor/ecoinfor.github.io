@@ -1,0 +1,11 @@
+---
+output: html_document
+---
+
+<hr>
+<center> 
+Copyright &copy; [Jian Zhang](mailto:jzhang@des.ecnu.edu.cn) 2019 -- <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script>
+| Created using [rmarkdown](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+</center>
