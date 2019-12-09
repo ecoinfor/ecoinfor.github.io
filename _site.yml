@@ -1,20 +1,27 @@
 name: "Jian Zhang"
 title: "Jian Zhang"
-description: "Homepage for Jian Zhang's Biodiversity and Ecoinformatics lab at school of ecological and evironmental sciences, east china normal university, Shanghai."
+description: "Homepage for Jian Zhang's Biodiversity and Ecoinformatics lab at School of Ecological and Evironmental Sciences, East China Normal University, Shanghai."
 output_dir: "."
 navbar:
   title: "Jian Zhang @ ECNU"
   right:
     - text: "Home"
       href: index.html
-    - text: "People"
+    - text: "Team & Collaborators"
       href: people.html
+    - text: "Research"
+      href: research.html
     - text: "Teaching"
       href: teach.html
     - text: "Publications"
       href: publications.html
+    - text: "Galary"
+      href: galary.html
+    - text: "Join the lab"
+      href: opportunities.html
     - text: "中文"
       href: cn.html
+      
 output:
   html_document:
     theme: readable
