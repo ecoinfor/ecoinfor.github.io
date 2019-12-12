@@ -11,10 +11,10 @@ navbar:
       href: people.html
     - text: "RESEARCH"
       href: research.html
-    - text: "TEACHING"
-      href: teach.html
     - text: "PUBLICATIONS"
       href: publications.html
+    - text: "TEACHING"
+      href: teach.html
     - text: "GALLERY"
       href: galary.html
     - text: "JOIN THE LAB"
