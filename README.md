@@ -1,2 +1,2 @@
-# jianzhang
-Jian's homepage
+# Jian Zhang
+Jian Zhang's homepage
