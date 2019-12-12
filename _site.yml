@@ -16,7 +16,7 @@ navbar:
     - text: "TEACHING"
       href: teach.html
     - text: "GALLERY"
-      href: galary.html
+      href: gallery.html
     - text: "JOIN THE LAB"
       href: opportunities.html
     - text: "中文"
