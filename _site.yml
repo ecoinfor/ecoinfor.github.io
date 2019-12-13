@@ -3,7 +3,7 @@ title: "Jian Zhang"
 description: "Homepage for Jian Zhang's Biodiversity and Ecoinformatics Group at School of Ecological and Evironmental Sciences, East China Normal University, Shanghai."
 output_dir: "."
 navbar:
-  title: <p style="color:blue;font-size:30px">Biodiversity and Ecoinformatics Group</p>
+  title: <p style="color:darkgreen;font-weight:bold;font-size:30px">Biodiversity and Ecoinformatics Group</p>
   right:
     - text: "HOME"
       href: index.html
