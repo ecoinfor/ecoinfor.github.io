@@ -1,0 +1,91 @@
+---
+title: "Biodiversity & Ecoinformatics Group"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div class = "row">
+<div class = "col-md-6">
+### **Jian Zhang (张健)**<br>
+#### **Professor in Ecology**<br>
+[School of Ecological and Environmental Sciences](http://www.sees.ecnu.edu.cn/),<br>
+[Zhejiang Tiantong Forest Ecosystem National Observation and Research Station](http://tiantong.ecnu.edu.cn/cn/Default.aspx),<br>
+[East China Normal University](https://www.ecnu.edu.cn/), Shanghai, P.R. China
+
+<br>
+
+#### Contact me: 
+
+347 Zi-Huan Building<br>
+500 Dongchuan Road<br>
+Shanghai 200241<br>
+P.R. China<br>
+Email: [jzhang(at)des.ecnu.edu.cn](mailto:jzhang@des.ecnu.edu.cn)
+</div>
+
+<div class = "col-md-6">
+
+<br>
+[![](Photo_Jian.JPG)](Photo_Jian.JPG){#id .class width=100% height=100%}
+
+</div>
+</div>
+
+<hr>
+
+#### Professional Experience
+
+
+* 2016.06 -- \ \ \ \ \ \ \ \ : Professor (Overseas High-level Talents Program)<br>
+[School of Ecological and Environmental Sciences](http://www.sees.ecnu.edu.cn/), [East China Normal University](https://www.ecnu.edu.cn/)
+
+* 2015.02 -- 2016.05:         Postdoctoral Fellow (Advisor: [Prof. Jens-Christian Svenning](http://pure.au.dk/portal/en/svenning@biology.au.dk))<br>
+                  Department of Bioscience, Aarhus University, Denmark
+                  
+* 2013.09 -- 2015.01:         Postdoctoral Fellow (Advisor: [Prof. Scott Nielsen](http://www.ace-lab.ca/))<br>
+                  Department of Renewable Resources, University of Alberta, Canada
+
+<hr>
+
+#### Education & Training
+
+* 2009.09 -- 2013.11:  PhD in Conservation Biology (Supervisor: [Prof. Fangliang He](https://sites.ualberta.ca/~fhe/))<br>
+		          Department of Renewable Resources, University of Alberta, Canada<br>
+		          Thesis: [Spatial and Temporal Variations in Tree Growth, Mortality, and Biodiversity in Alberta Forests](http://hdl.handle.net/10402/era.37535)
+
+* 2004.09 -- 2009.06:  Master in Ecology (Supervisor: [Prof. Zhanqing Hao](http://trlst.iae.ac.cn:8080/index)<br>
+		          Institute of Applied Ecology, Chinese Academy of Sciences<br>
+		          Thesis: [Spatial Pattern of Tree Species in an Old-growth Temperate Forest: Chance or Competition?](http://www.irgrid.ac.cn/handle/1471x/105954)
+
+* 2000.09 -- 2004.07:  B.Sc. in Environmental Science<br>
+		          Department of Environmental Science, Shanxi University
+
+* 2008:  Visiting student (Supervised by [Prof. Bo Song](https://www.clemson.edu/cafls/faculty_staff/profiles/bosong))<br>
+		          Baruch Institute of Coastal Ecology and Forest Science, Clemson University, USA
+		          
+* 2007:  Visiting student (Supervised by [Prof. Fangliang He](http://www.ualberta.ca/~fhe/index.html))<br>
+		          Department of Renewable Resources, University of Alberta, Canada
+
+* 2006:  Visiting student (Supervised by [Prof. Bo Song](https://www.clemson.edu/cafls/faculty_staff/profiles/bosong))<br>
+		          Baruch Institute of Coastal Ecology and Forest Science, Clemson University, USA
+		          
+<hr>
+
+#### Professional Services
+**Editorial Board**<br>
+[Ecography](http://www.ecography.org/) Subject Editor (2019.03-)<br>
+[Remote Sensing in Ecology and Conservation](https://zslpublications.onlinelibrary.wiley.com/journal/20563485) Associate Editor (2017.12-)<br>
+[Biodiversity Science  生物多样性](http://www.biodiversity-science.net/CN/1005-0094/home.shtml) Deputy Editor-in-Chief (2019.11-2023)
+
+**Manuscript Review**<br>
+American Naturalist, Biogeosciences, Biological Conservation, Canadian Journal of Forest Research, Diversity and Distributions, Ecography, Ecological Applications, Frontiers of Biogeography, Global Change Biology, Global Ecology and Biogeography, Journal of Biogeography, Journal of Ecology, Journal of Plant Ecology, Journal of Vegetation Science, Methods in Ecology and Evolution, Oikos, Proceedings of the Royal Society B: Biological Sciences, Remote Sensing in Ecology and Conservation, et al.
+
+<hr>
+
+#### Research Interests
+**Biodiversity, Macroecology, Biogeography, Community ecology, Ecoinformatics** 
+
+* More details could be found [here](research.html).
+* <p style="color:darkgreen">**Prospective students and postdocs are encouraged to read [our publications](publications.html) and [contact me](mailto:jzhang@des.ecnu.edu.cn) or the [lab members](people.html) before applying officially.** </p>
