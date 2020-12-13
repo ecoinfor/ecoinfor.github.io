@@ -7,34 +7,44 @@
 
 
 <url>
-  <loc>https://www.dxing.group/</loc>
+  <loc>https://ecoinfor.github.io/</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.dxing.group/index.html</loc>
+  <loc>https://ecoinfor.github.io/index.html</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dxing.group/people.html</loc>
+  <loc>https://ecoinfor.github.io/people.html</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dxing.group/teach.html</loc>
+  <loc>https://ecoinfor.github.io/teach.html</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dxing.group/publications.html</loc>
+  <loc>https://ecoinfor.github.io/publications.html</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dxing.group/cn.html</loc>
+  <loc>https://ecoinfor.github.io/opportunities.html</loc>
   <lastmod>2019-10-06T09:53:37+00:00</lastmod>
   <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ecoinfor.github.io/gallery.html</loc>
+  <lastmod>2019-10-06T09:53:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ecoinfor.github.io/library.html</loc>
+  <lastmod>2019-10-06T09:53:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 

@@ -21,6 +21,8 @@ navbar:
       href: opportunities.html
     - text: "中文"
       href: cn.html
+    - text: "LIBRARY"
+      href: library.html
       
 output:
   html_document:
