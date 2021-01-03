@@ -23,6 +23,15 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -67,6 +76,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 
 
@@ -471,6 +481,8 @@ $(document).ready(function () {
 <p><strong>Anyu Chen (陈安禹)</strong>: Undergraduate student at ECNU (2017-2018)<br></p>
 <p><strong>Xingda Liu (刘兴达)</strong>: Undergraduate student at ECNU (2018-2019)<br></p>
 <p><strong>Junzhe Xu (许俊哲)</strong>: Undergraduate student at ECNU (2018-2019)<br></p>
+<p><strong>Zijing Luo (罗梓菁)</strong>: Undergraduate student at ECNU (2020-2021)<br></p>
+<p><strong>Aiqun Zeng (曾艾群)</strong>: Undergraduate student at ECNU (2019-)<br></p>
 </div>
 </div>
 
@@ -503,7 +515,7 @@ Copyright © <a href="mailto:jzhang@des.ecnu.edu.cn">Jian Zhang</a> 2019 –
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

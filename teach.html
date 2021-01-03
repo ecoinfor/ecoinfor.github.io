@@ -23,6 +23,15 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -67,6 +76,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 
 
@@ -328,43 +338,43 @@ $(document).ready(function () {
 <hr>
 <div class="row">
 <div class="col-md-4">
-<p><a href="Teach1.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach1.jpg" /></a></p>
+<p><a href="Pictures/Teach1.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach1.jpg" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="Teach2.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach2.jpg" /></a></p>
+<p><a href="Pictures/Teach2.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach2.jpg" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="Teach3.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach3.jpg" /></a></p>
+<p><a href="Pictures/Teach3.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach3.jpg" /></a></p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4">
-<p><a href="Teach4.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach4.jpg" /></a></p>
+<p><a href="Pictures/Teach4.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach4.jpg" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="Teach5.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach5.jpg" /></a></p>
+<p><a href="Pictures/Teach5.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach5.jpg" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="Teach6.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach6.jpg" /></a></p>
+<p><a href="Pictures/Teach6.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach6.jpg" /></a></p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4">
-<p><a href="Teach9.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach9.png" /></a></p>
+<p><a href="Pictures/Teach9.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach9.png" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="Teach8.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach8.png" /></a></p>
+<p><a href="Pictures/Teach8.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach8.png" /></a></p>
 </div>
 <div class="col-md-4">
-<p><a href="teach10.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/teach10.png" /></a></p>
+<p><a href="Pictures/teach10.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/teach10.png" /></a></p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-6">
-<p><a href="Teach7.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach7.jpg" /></a></p>
+<p><a href="Pictures/Teach7.jpg" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach7.jpg" /></a></p>
 </div>
 <div class="col-md-6">
-<p><a href="Teach0.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach0.png" /></a></p>
+<p><a href="Pictures/Teach0.png" id="id" class="class" width="100%" height="100%"><img src="Pictures/Teach0.png" /></a></p>
 </div>
 </div>
 </div>
@@ -398,7 +408,7 @@ Copyright © <a href="mailto:jzhang@des.ecnu.edu.cn">Jian Zhang</a> 2019 –
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
