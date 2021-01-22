@@ -23,6 +23,15 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -67,6 +76,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 
 
@@ -352,8 +362,8 @@ $(document).ready(function () {
 </div>
 <div id="professional-services" class="section level4">
 <h4>Professional Services</h4>
-<p><strong>Editorial Board</strong><br> <a href="http://www.ecography.org/">Ecography</a> Subject Editor (2019.03-)<br> <a href="https://zslpublications.onlinelibrary.wiley.com/journal/20563485">Remote Sensing in Ecology and Conservation</a> Associate Editor (2017.12-)<br> <a href="http://www.biodiversity-science.net/CN/1005-0094/home.shtml">Biodiversity Science 生物多样性</a> Deputy Editor-in-Chief (2019.11-2023)</p>
-<p><strong>Manuscript Review</strong><br> American Naturalist, Biogeosciences, Biological Conservation, Canadian Journal of Forest Research, Diversity and Distributions, Ecography, Ecological Applications, Frontiers of Biogeography, Global Change Biology, Global Ecology and Biogeography, Journal of Biogeography, Journal of Ecology, Journal of Plant Ecology, Journal of Vegetation Science, Methods in Ecology and Evolution, Oikos, Proceedings of the Royal Society B: Biological Sciences, Remote Sensing in Ecology and Conservation, et al.</p>
+<p><strong>Editorial Board</strong><br> <a href="http://www.ecography.org/">Ecography</a> Subject Editor (2019.03-)<br> <a href="https://zslpublications.onlinelibrary.wiley.com/journal/20563485">Remote Sensing in Ecology and Conservation</a> Associate Editor (2017.12-)<br> <a href="http://www.biodiversity-science.net/CN/1005-0094/home.shtml">Biodiversity Science 生物多样性</a> Deputy Editor-in-Chief (2019.11-2023)<br> <a href="http://www.cjae.net/CN/1001-9332/home.shtml">Chinese Journal of Applied Ecology 应用生态学报</a> Associate Editor (2021.1-)</p>
+<p><strong>Manuscript Review</strong><br> American Naturalist, Biogeosciences, Biological Conservation, Canadian Journal of Forest Research, Diversity and Distributions, Ecography, Ecological Applications, Frontiers of Biogeography, Global Change Biology, Global Ecology and Biogeography, Journal of Biogeography, Journal of Ecology, Journal of Plant Ecology, Journal of Vegetation Science, Methods in Ecology and Evolution, Oikos, New Phytologist, Proceedings of the Royal Society B: Biological Sciences, Remote Sensing in Ecology and Conservation, et al.</p>
 <hr>
 </div>
 <div id="research-interests" class="section level4">
@@ -396,7 +406,7 @@ Copyright © <a href="mailto:jzhang@des.ecnu.edu.cn">Jian Zhang</a> 2019 –
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
