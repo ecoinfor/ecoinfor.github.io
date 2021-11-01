@@ -13,13 +13,22 @@
 
 <title>About us</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -34,11 +43,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -51,32 +55,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 
@@ -87,10 +65,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -107,40 +81,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 66px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
-.section h2 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
-.section h3 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
-.section h4 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
-.section h5 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
-.section h6 {
-  padding-top: 71px;
-  margin-top: -71px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -168,7 +115,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -180,7 +127,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -191,10 +138,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -206,7 +166,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -317,7 +276,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -340,12 +299,6 @@ $(document).ready(function () {
 </center>
 </div>
 <div class="col-md-3" align="center">
-<p><img src="Pictures/Team_Zhaochen.jpg" id="id" class="class" height="200" /></p>
-<center>
-<strong><a href="mailto:sean19880305@163.com">Zhaochen Zhang (张昭臣)</a></strong><br> Research Assistant<br> <strong>Research interest</strong>: Forest ecology, Community ecology<br>
-</center>
-</div>
-<div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Yuzhuo%20Wang.jpg" id="id" class="class" height="200" /></p>
 <center>
 <strong><a href="mailto:yzwang@stu.ecnu.edu.cn">Yuzhuo Wang (王宇卓)</a></strong><br> PhD student<br> <strong>Research interest</strong>: Macroecology, Conservation Biogeography<br>
@@ -355,6 +308,12 @@ $(document).ready(function () {
 <p><img src="Pictures/Team_Xianyu%20Yang.jpg" id="id" class="class" height="200" /></p>
 <center>
 <strong><a href="mailto:xianyu_yang@126.com">Xianyu Yang (杨贤宇)</a></strong><br> PhD student<br> <strong>Research interest</strong>: Population ecology, Demography, Distributional range limits<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Antony.jpg" id="id" class="class" height="200" /></p>
+<center>
+<strong><a href="mailto:antonynjogu48@gmail.com">Antony Njogu</a></strong><br> Postdoc (co-supervised with Prof. Dingliang Xing)<br> <strong>Research interest</strong>: Plant community ecology<br>
 </center>
 </div>
 </div>
@@ -406,7 +365,7 @@ $(document).ready(function () {
 <div class="col-md-3" align="center">
 <img src="Pictures/Team_ShuLi.jpg" id="id" class="class" height="200" />
 <center>
-<strong><a href="mailto:10184301114@stu.ecnu.edu.cn">Li Shu（舒丽）</a></strong><br> Master student<br> <strong>Research interest</strong>: TBD<br>
+<strong><a href="mailto:10184301114@stu.ecnu.edu.cn">Li Shu（舒丽）</a></strong><br> Master student<br> <strong>Research interest</strong>: Remote sensing applications in Ecology<br>
 </center>
 </div>
 </div>
@@ -414,25 +373,25 @@ $(document).ready(function () {
 <div class="col-md-3" align="center">
 <img src="Pictures/Team_Xiaoran.jpg" id="id" class="class" height="200" />
 <center>
-<strong><a href="mailto:xiaoranw9@163.com">Xiaoran Wang（王潇然）</a></strong><br> Master student<br> <strong>Research interest</strong>: TBD<br>
+<strong><a href="mailto:xiaoranw9@163.com">Xiaoran Wang（王潇然）</a></strong><br> Master student<br> <strong>Research interest</strong>: Plant-herbivore interaction<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
-<img src="Pictures/person-icon.png" id="id" class="class" height="200" />
+<img src="Pictures/Team_Pengcheng.jpg" id="id" class="class" height="200" />
 <center>
-<strong><a href="mailto:???">Pengcheng Liu（刘鹏程）</a></strong><br> PhD student<br> <strong>Research interest</strong>: TBD<br>
+<strong><a href="mailto:???">Pengcheng Liu（刘鹏程）</a></strong><br> PhD student<br> <strong>Research interest</strong>: Plant community ecology<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
-<img src="Pictures/person-icon.png" id="id" class="class" height="200" />
+<img src="Pictures/Team_WangFang.jpg" id="id" class="class" height="200" />
 <center>
-<strong><a href="mailto:???">Fang Wang（王芳）</a></strong><br> Master student<br> <strong>Research interest</strong>: TBD<br>
+<strong><a href="mailto:???">Fang Wang（王芳）</a></strong><br> Master student<br> <strong>Research interest</strong>: Plant community ecology<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
-<img src="Pictures/person-icon.png" id="id" class="class" height="200" />
+<img src="Pictures/Team_Xiaofan.jpg" id="id" class="class" height="200" />
 <center>
-<strong><a href="mailto:???">Xiaofan Shang（商晓凡）</a></strong><br> Master student<br> <strong>Research interest</strong>: TBD<br>
+<strong><a href="mailto:???">Xiaofan Shang（商晓凡）</a></strong><br> Master student<br> <strong>Research interest</strong>: Plant community ecology<br>
 </center>
 </div>
 </div>
@@ -448,25 +407,31 @@ $(document).ready(function () {
 </center>
 </div>
 <div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Zhaochen.jpg" id="id" class="class" height="200" /></p>
+<center>
+<strong><a href="mailto:sean19880305@163.com">Zhaochen Zhang (张昭臣)</a></strong><br> Research Assistant (Currently <strong>Associate Professor</strong> at Lushan Botanical Garden, Chinese Academy of Sciences)<br> <strong>Research interest</strong>: Forest ecology, Community ecology<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Houjuan%20Song.jpg" id="id" class="class" height="200" /></p>
 <center>
-<strong><a href="mailto:songhoujuan@163.com">Houjuan Song (宋厚娟)</a></strong><br> PhD student<br> <strong>Research interest</strong>: Macroecology, Community ecology<br>
+<strong><a href="mailto:songhoujuan@163.com">Houjuan Song (宋厚娟)</a></strong><br> PhD student (Currently <strong>Associate Professor</strong> at Shanxi Agriculture University)<br> <strong>Research interest</strong>: Macroecology, Community ecology<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Zac.jpg" id="id" class="class" height="200" /></p>
 <center>
-<strong>Zachary MacDonald</strong><br> Visiting Student (2018.02-06)<br> PhD student at Univ. of Alberta, Canada<br>
+<strong>Zachary MacDonald</strong><br> Visiting Student (2018.02-06)<br> PhD student at Univ. of Alberta, Canada (Currently postdoc at Univ. of Alberta)<br>
 </center>
 </div>
+</div>
+<div class="row">
 <div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Ditte%20Arp%20Jensen.jpg" id="id" class="class" height="200" /></p>
 <center>
 <strong><a href="mailto:dittearp@bios.au.dk">Ditte Arp Jensen</a></strong><br> Visiting student (2019.09-2020.01)<br> PhD student at Aarhus Univ., Denmark<br> <strong>Research interest</strong>: Global change ecology, Species distributions, Reforestation<br>
 </center>
 </div>
-</div>
-<div class="row">
 <div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Oukai.jpg" id="id" class="class" height="200" /></p>
 <center>
@@ -485,6 +450,8 @@ $(document).ready(function () {
 <strong><a href="mailto:18553506836@163.com">Jiaxin Kong (孔嘉鑫)</a></strong><br> Master student (2017-2020)<br> <strong>Research interest</strong>: Remote sensing, Biodiversity<br>
 </center>
 </div>
+</div>
+<div class="row">
 <div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Mengwei.jpg" id="id" class="class" height="200" /></p>
 <center>
@@ -501,7 +468,7 @@ $(document).ready(function () {
 <p><strong>Xingda Liu (刘兴达)</strong>: Undergraduate student at ECNU (2018-2019)<br></p>
 <p><strong>Junzhe Xu (许俊哲)</strong>: Undergraduate student at ECNU (2018-2019)<br></p>
 <p><strong>Zijing Luo (罗梓菁)</strong>: Undergraduate student at ECNU (2020-2021)<br></p>
-<p><strong>Aiqun Zeng (曾艾群)</strong>: Undergraduate student at ECNU (2019-)<br></p>
+<p><strong>Aiqun Zeng (曾艾群)</strong>: Undergraduate student at ECNU (2019)<br></p>
 </div>
 </div>
 
@@ -552,7 +519,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
