@@ -24,7 +24,7 @@ navbar:
     - text: "LIBRARY"
       href: library.html
     - text: "DATA"
-      href: Data.html
+      href: data.html
       
 output:
   html_document:
