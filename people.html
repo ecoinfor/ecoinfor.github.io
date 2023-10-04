@@ -13,7 +13,7 @@
 
 <title> </title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -141,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -174,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -183,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -312,22 +309,21 @@ conservation<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Shiyu%20Ma.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:shiyu.ma_ecology@outlook.com">Shiyu Ma
+(马诗钰)</a></strong><br> Research Assistant<br> <strong>Research
+interest</strong>: Community ecology, ecosystem ecology<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Yuzhuo%20Wang.jpg" id="id" class="class"
 height="200" /></p>
 <center>
 <strong><a href="mailto:yzwang@stu.ecnu.edu.cn">Yuzhuo Wang
 (王宇卓)</a></strong><br> PhD student<br> <strong>Research
 interest</strong>: Macroecology, Conservation Biogeography<br>
-</center>
-</div>
-<div class="col-md-3" align="center">
-<p><img src="Pictures/Team_Xianyu%20Yang.jpg" id="id" class="class"
-height="200" /></p>
-<center>
-<strong><a href="mailto:xianyu_yang@126.com">Xianyu Yang
-(杨贤宇)</a></strong><br> PhD student<br> <strong>Research
-interest</strong>: Population ecology, Demography, Distributional range
-limits<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
@@ -341,15 +337,6 @@ interest</strong>: Remote sensing, Community ecology<br>
 </div>
 </div>
 <div class="row">
-<div class="col-md-3" align="center">
-<p><img src="Pictures/Team_Zhongping.JPG" id="id" class="class"
-height="200" /></p>
-<center>
-<strong><a href="mailto:tianzhongping007@163.com">Zhongping Tian
-(田中平)</a></strong><br> PhD student<br> <strong>Research
-interest</strong>: Macroecology, Community ecology<br>
-</center>
-</div>
 <div class="col-md-3" align="center">
 <p><img src="Pictures/Team_Ran%20Zhang.jpg" id="id" class="class"
 height="200" /></p>
@@ -371,21 +358,11 @@ ecology<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
-<img src="Pictures/Team_ShuLi.jpg" id="id" class="class" height="200" />
-<center>
-<strong><a href="mailto:18166961446@163.com">Li
-Shu（舒丽）</a></strong><br> Master student<br> <strong>Research
-interest</strong>: Remote sensing applications in Ecology<br>
-</center>
-</div>
-</div>
-<div class="row">
-<div class="col-md-3" align="center">
 <img src="Pictures/Team_Xiaoran.jpg" id="id" class="class"
 height="200" />
 <center>
 <strong><a href="mailto:xiaoranw9@163.com">Xiaoran
-Wang（王潇然）</a></strong><br> Master student<br> <strong>Research
+Wang（王潇然）</a></strong><br> PhD student<br> <strong>Research
 interest</strong>: Plant-herbivore interaction<br>
 </center>
 </div>
@@ -396,6 +373,17 @@ height="200" />
 <strong><a href="mailto:634370239@qq.com">Pengcheng
 Liu（刘鹏程）</a></strong><br> PhD student<br> <strong>Research
 interest</strong>: Plant community ecology, Biogeography<br>
+</center>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Xinyang%20Wang.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:xinyangwang2021@163.com">Xinyang Wang
+(王鑫洋)</a></strong><br> PhD student<br> <strong>Research
+interest</strong>: Macroecology, Community ecology<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
@@ -416,8 +404,6 @@ Shang（商晓凡）</a></strong><br> Master student<br> <strong>Research
 interest</strong>: Community ecology, Island Biogeography<br>
 </center>
 </div>
-</div>
-<div class="row">
 <div class="col-md-3" align="center">
 <img src="Pictures/Team_JingchaoZhao.jpg" id="id" class="class"
 height="200" />
@@ -427,6 +413,8 @@ Zhao（赵静超）</a></strong><br> Master student<br> <strong>Research
 interest</strong>: TBD<br>
 </center>
 </div>
+</div>
+<div class="row">
 <div class="col-md-3" align="center">
 <img src="Pictures/Team_JunhongChen.jpg" id="id" class="class"
 height="200" />
@@ -437,11 +425,29 @@ interest</strong>: TBD<br>
 </center>
 </div>
 <div class="col-md-3" align="center">
-<img src="Pictures/Team_MufanSun.JPG" id="id" class="class"
+<img src="Pictures/Team_MufanSun.jpg" id="id" class="class"
 height="200" />
 <center>
 <strong><a href="mailto:1871444344@qq.com">Mufan
 Sun（孙慕梵）</a></strong><br> Master student<br> <strong>Research
+interest</strong>: TBD<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Min%20Guan.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:gm13404846498@163.com">Min Guan
+(关敏)</a></strong><br> Master student<br> <strong>Research
+interest</strong>: TBD<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Pu%20Zheng.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:2326129173@qq.com">Pu Zheng
+(郑普)</a></strong><br> PhD student<br> <strong>Research
 interest</strong>: TBD<br>
 </center>
 </div>
@@ -538,7 +544,8 @@ height="200" /></p>
 height="200" /></p>
 <center>
 <strong><a href="mailto:wangxin_2016@foxmail.com">Xin Wang
-(王昕)</a></strong><br> PhD student (2017-2022)<br> <strong>Research
+(王昕)</a></strong><br> PhD student (2017-2022)(Currently
+<strong>Assistant professor</strong> in Shanxi)<br> <strong>Research
 interest</strong>: Conservation ecology, Urban ecology<br>
 </center>
 </div>
@@ -570,6 +577,39 @@ height="200" /></p>
 </center>
 </div>
 </div>
+<div class="row">
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Xianyu%20Yang.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:xianyu_yang@126.com">Xianyu Yang
+(杨贤宇)</a></strong><br> PhD student (2018-2023)(Currently
+<strong>Postdoc</strong> at ETH Zurich)<br> <strong>Research
+interest</strong>: Population ecology, Demography, Distributional range
+limits<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
+<p><img src="Pictures/Team_Zhongping.jpg" id="id" class="class"
+height="200" /></p>
+<center>
+<strong><a href="mailto:tianzhongping007@163.com">Zhongping Tian
+(田中平)</a></strong><br> PhD student (2019-2023)(Currently
+<strong>Associate professor</strong> at Xinjiang Normal University)<br>
+<strong>Research interest</strong>: Macroecology, Community ecology<br>
+</center>
+</div>
+<div class="col-md-3" align="center">
+<img src="Pictures/Team_ShuLi.jpg" id="id" class="class" height="200" />
+<center>
+<strong><a href="mailto:18166961446@163.com">Li
+Shu（舒丽）</a></strong><br> Master student (2020-2023)<br>
+<strong>Research interest</strong>: Remote sensing applications in
+Ecology<br>
+</center>
+</div>
+</div>
+</div>
 <hr>
 <p><strong>Zhijing Xie (谢致敬)</strong>: Visiting PhD student
 (2021.11-2021.12)<br></p>
@@ -592,7 +632,7 @@ from Wuhan Univ.(2018.07)<br></p>
 <p><strong>Zijing Luo (罗梓菁)</strong>: Undergraduate student at ECNU
 (2020-2021)<br></p>
 <p><strong>Aiqun Zeng (曾艾群)</strong>: Undergraduate student at ECNU
-(2019)<br></p>
+(2019,2022-2023)<br></p>
 <p><strong>Zhuo Yang (杨卓)</strong>: Undergraduate student at ECNU
 (2021-2022)<br></p>
 <p><strong>Tao Liu (刘涛)</strong>: Undergraduate student at ECNU
