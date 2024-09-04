@@ -13,7 +13,7 @@
 
 <title>生物多样性与生态信息学研究组</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -80,6 +81,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -137,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -232,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -293,34 +294,62 @@ $(document).ready(function () {
 <p><br></p>
 <div id="张健" class="section level3">
 <h3><strong>张健</strong></h3>
-<p>教授 (海外高层次人才引进项目)、博士生导师<br> <a href="https://www.ecnu.edu.cn/">华东师范大学</a> <a href="http://www.sees.ecnu.edu.cn/">生态与环境科学学院</a>,<br> <a href="http://tiantong.ecnu.edu.cn/cn/Default.aspx">浙江天童森林生态系统国家野外科学观测研究站</a></p>
-<p>地址：上海市闵行区东川路500号资环楼347<br> 邮编：200241<br> 邮箱：<a href="mailto:jzhang@des.ecnu.edu.cn">jzhang(at)des.ecnu.edu.cn</a></p>
+<p>教授、博士生导师<br> <a href="https://www.sysu.edu.cn/">中山大学</a>
+<a href="https://lifesciences.sysu.edu.cn/">生命科学学院</a></p>
+<p>地址：广东省广州市新港西路135号中大生科院1-229<br> 邮编：510275<br>
+邮箱：<a
+href="mailto:zhangjian6@mail.sysu.edu.cn">zhangjian6(at)mail.sysu.edu.cn</a></p>
 </div>
 </div>
 <div class="col-md-6">
 <p><br></p>
-<p><a href="Photo_Lab201811.jpg" id="id" class="class" width="130%" height="130%"><img src="Pictures/Photo_Lab201811.jpg" /></a></p>
+<p><a href="Photo_Lab201811.jpg" id="id" class="class" width="130%"
+height="130%"><img src="Pictures/Photo_Lab201811.jpg" /></a></p>
 </div>
 </div>
 <hr>
 <div id="工作经历" class="section level4">
 <h4>工作经历</h4>
 <ul>
-<li><p>2016.06 –          : 教授、博士生导师；<a href="http://www.sees.ecnu.edu.cn">华东师范大学生态与环境科学学院</a></p></li>
-<li><p>2015.02 – 2016.05: 博士后 (合作导师：<a href="http://pure.au.dk/portal/en/svenning@biology.au.dk">Prof. Jens-Christian Svenning</a>)； [丹麦]奥胡思大学生命科学系</p></li>
-<li><p>2013.09 – 2015.01: 博士后 (合作导师：<a href="http://www.ace-lab.ca/">Prof. Scott Nielsen</a>)； [加拿大]阿尔伯塔大学可再生资源系</p></li>
+<li><p>2024.08 –          : 教授、博士生导师；<a
+href="http://www.sees.ecnu.edu.cn">中山大学生命科学学院</a></p></li>
+<li><p>2016.06 – 202.07: 教授、博士生导师；<a
+href="http://www.sees.ecnu.edu.cn">华东师范大学生态与环境科学学院</a></p></li>
+<li><p>2015.02 – 2016.05: 博士后 (合作导师：<a
+href="http://pure.au.dk/portal/en/svenning@biology.au.dk">Prof. Jens-Christian
+Svenning</a>)； [丹麦]奥胡思大学生命科学系</p></li>
+<li><p>2013.09 – 2015.01: 博士后 (合作导师：<a
+href="http://www.ace-lab.ca/">Prof. Scott Nielsen</a>)；
+[加拿大]阿尔伯塔大学可再生资源系</p></li>
 </ul>
 <hr>
 </div>
 <div id="教育背景" class="section level4">
 <h4>教育背景</h4>
 <ul>
-<li><p>2009.09 – 2013.11: 理学博士 (专业：保护生物学；导师: <a href="https://sites.ualberta.ca/~fhe/">Prof. Fangliang He</a>); [加拿大]阿尔伯塔大学可再生资源系; 博士论文: <a href="http://hdl.handle.net/10402/era.37535">Spatial and Temporal Variations in Tree Growth, Mortality, and Biodiversity in Alberta Forests</a></p></li>
-<li><p>2004.09 – 2009.06: 理学硕士 (专业：生态学；导师: <a href="http://trlst.iae.ac.cn:8080/index">Prof. Zhanqing Hao</a>; 中国科学院沈阳应用生态研究所; 硕士论文: <a href="http://www.irgrid.ac.cn/handle/1471x/105954">Spatial Pattern of Tree Species in an Old-growth Temperate Forest: Chance or Competition?</a></p></li>
-<li><p>2000.09 – 2004.07: 理学学士 (专业：环境科学); 山西大学环境与资源学院</p></li>
-<li><p>2008: 访问学生 (指导老师: <a href="https://www.clemson.edu/cafls/faculty_staff/profiles/bosong">Prof. Bo Song</a>); [美国]克莱姆森大学Baruch海岸生态学与林学研究所</p></li>
-<li><p>2007: 访问学生 (指导老师: <a href="http://www.ualberta.ca/~fhe/index.html">Prof. Fangliang He</a>); [加拿大]阿尔伯塔大学可再生资源系</p></li>
-<li><p>2006: 访问学生 (指导老师: <a href="https://www.clemson.edu/cafls/faculty_staff/profiles/bosong">Prof. Bo Song</a>); [美国]克莱姆森大学Baruch海岸生态学与林学研究所</p></li>
+<li><p>2009.09 – 2013.11: 理学博士 (专业：保护生物学；导师: <a
+href="https://sites.ualberta.ca/~fhe/">Prof. Fangliang He</a>);
+[加拿大]阿尔伯塔大学可再生资源系; 博士论文: <a
+href="http://hdl.handle.net/10402/era.37535">Spatial and Temporal
+Variations in Tree Growth, Mortality, and Biodiversity in Alberta
+Forests</a></p></li>
+<li><p>2004.09 – 2009.06: 理学硕士 (专业：生态学；导师: <a
+href="http://trlst.iae.ac.cn:8080/index">Prof. Zhanqing Hao</a>;
+中国科学院沈阳应用生态研究所; 硕士论文: <a
+href="http://www.irgrid.ac.cn/handle/1471x/105954">Spatial Pattern of
+Tree Species in an Old-growth Temperate Forest: Chance or
+Competition?</a></p></li>
+<li><p>2000.09 – 2004.07: 理学学士 (专业：环境科学);
+山西大学环境与资源学院</p></li>
+<li><p>2008: 访问学生 (指导老师: <a
+href="https://www.clemson.edu/cafls/faculty_staff/profiles/bosong">Prof. Bo
+Song</a>); [美国]克莱姆森大学Baruch海岸生态学与林学研究所</p></li>
+<li><p>2007: 访问学生 (指导老师: <a
+href="http://www.ualberta.ca/~fhe/index.html">Prof. Fangliang He</a>);
+[加拿大]阿尔伯塔大学可再生资源系</p></li>
+<li><p>2006: 访问学生 (指导老师: <a
+href="https://www.clemson.edu/cafls/faculty_staff/profiles/bosong">Prof. Bo
+Song</a>); [美国]克莱姆森大学Baruch海岸生态学与林学研究所</p></li>
 </ul>
 <hr>
 </div>
@@ -328,7 +357,8 @@ $(document).ready(function () {
 <h4>研究兴趣</h4>
 <ul>
 <li><p>
-研究方向： <strong>生物多样性、群落生态学、宏生态学（Macroecology）、生态信息学、生物地理学</strong>
+研究方向：
+<strong>生物多样性、群落生态学、宏生态学（Macroecology）、生态信息学、生物地理学</strong>
 </p></li>
 <li><p>
 研究手段：<strong>野外观测</strong>(长期监测、无人机遥感等)、<strong>数据挖掘</strong>
@@ -340,10 +370,10 @@ $(document).ready(function () {
 <hr>
 <ul>
 <li><p style="color:darkgreen">
-<strong>课题组目前拟招收博士后1–2名。相关信息见<a href="(http://talent.sciencenet.cn/index.php?s=Info/index/id/18343)">招聘广告</a>。</strong>
+<strong>课题组目前拟招收博士后1–2名。</strong>
 </p></li>
 <li><p style="color:darkgreen">
-<strong>课题组每年招收硕士研究生1–2名，博士研究生1名。具体招生政策可参考<a href="https://yjszs.ecnu.edu.cn/">学校</a>与<a href="http://www.sees.ecnu.edu.cn/index.php?classid=7323">学院</a>招生网站。</strong>
+<strong>课题组每年招收硕士研究生1–2名，博士研究生1-2名。具体招生政策可参考学校与学院招生网站。</strong>
 </p></li>
 <li><p style="color:darkgreen">
 <strong>课题组非常欢迎对生态学、生物多样性科学与保护感兴趣的本科生来课题组实习或做毕业论文。</strong>
