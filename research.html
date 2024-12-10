@@ -13,7 +13,7 @@
 
 <title> </title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -80,6 +81,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -137,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -232,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -289,64 +290,252 @@ $(document).ready(function () {
 
 
 <p style="font-family: times, serif; font-size:15pt; font-style:italic; color:blue">
-“When people are encouraged to take a close look at the remnants of nature, in its complexity, beauty, and majesty, and when they understand that the natural environment is the home of their deep history, many become the reserves’ most ardent supporters.” — Edward O. Wilson &lt;Half-Earth: Our Planet’s Fight for Life&gt;, 2017
+“When people are encouraged to take a close look at the remnants of
+nature, in its complexity, beauty, and majesty, and when they understand
+that the natural environment is the home of their deep history, many
+become the reserves’ most ardent supporters.” — Edward O. Wilson
+&lt;Half-Earth: Our Planet’s Fight for Life&gt;, 2017
 </p>
 <p><br></p>
 <div id="research-interests" class="section level2">
 <h2>Research Interests</h2>
 <hr>
-<p><strong><span style="color:blue; font-size:18pt">Marcoecology and Biogeography</span></strong></p>
+<p><strong><span style="color:blue; font-size:18pt">Macroecology and
+Biogeography</span></strong></p>
 <p style="font-family: times, serif; font-size:15pt; font-style:italic">
-“..that grand subject, that almost keystone of the laws of creation, Geographical Distribution” — Charles Darwin, in a letter to Joseph Dalton Hooker, 1845 (“地理分布这个伟大的主题几乎是一块生命规律之基石” — 达尔文1845年在给虎克的一封信)
+“..that grand subject, that almost keystone of the laws of creation,
+Geographical Distribution” — Charles Darwin, in a letter to Joseph
+Dalton Hooker, 1845 (“地理分布这个伟大的主题几乎是一块生命规律之基石” —
+达尔文1845年在给虎克的一封信)
 </p>
-<p>The core of <em>Marcoecology</em> and <em>Biogeography</em> is to document spatial distribution of biodiversity and related ecological and evolutionary processes. Taking the advantages of biodiversity big data (biodiversity informatics) and emerging technologies, we have general interests in large-scale biodiversity patterns and the underlying mechanisms.</p>
-<p><a href="Pictures/Research-2.JPG" id="id" class="class" width="50%" height="50%"><img src="Pictures/Research-2.JPG" /></a></p>
+<p>The core of <em>Macroecology</em> and <em>Biogeography</em> is to
+document spatial distribution of biodiversity and related ecological and
+evolutionary processes. Taking the advantages of biodiversity big data
+(biodiversity informatics) and emerging technologies, we have general
+interests in large-scale biodiversity patterns and the underlying
+mechanisms.</p>
+<p><a href="Pictures/Research-2.JPG" id="id" class="class" width="50%"
+height="50%"><img src="Pictures/Research-2.JPG" /></a></p>
 <p><span style="font-style:italic">Selected publications:</span></p>
 <ol style="list-style-type: decimal">
-<li><p>Song, H.<code>#</code>, Ordonez, A., Svenning, J-C., Qian, H., Yin, X., Mao, L., Deng, T. and <strong>Zhang, J.<code>*</code></strong> Regional disparity in extinction risk: comparison of disjunct plant genera between eastern Asia and eastern North America. <strong><em>Global Change Biology</em></strong> 27(9): 1904-1914 <a href="https://doi.org/10.1111/gcb.15525">doi:10.1111/gcb.15525</a></p></li>
-<li><p>Feng, G., <strong>Zhang, J.<code>*</code></strong>, Girardello, M., Pellissier, V., Svenning, J-C. Forest canopy height co-determines taxonomic and functional richness, but not functional dispersion of mammals and birds globally. <strong><em>Global Ecology and Biogeography</em></strong> 29(8):1350-1359 <a href="https://doi.org/10.1111/geb.13110">doi:10.1111/geb.13110</a></p></li>
-<li><p><strong>Zhang, J.<code>*</code></strong>, Qian, H., Girardello, M., Pellissier, V., Nielsen, S.E. and Svenning, J.-C. 2018. Trophic interactions among vertebrate guilds and plants shape global patterns in species diversity. <strong><em>Proceedings of the Royal Society B: Biological Sciences</em></strong> 285:20180949. <a href="https://doi.org/10.1098/rspb.2018.0949">doi:10.1098/rspb.2018.0949</a></p></li>
-<li><p><strong>Zhang, J.<code>*</code></strong>, Nielsen, S.E., Chen, Y.H., Georges, D., Qin, Y.C., Wang, S., Svenning, J-C. and Thuiller, W. 2017. Extinction risk of North American seed plants elevated by climate and land-use change. <strong><em>Journal of Applied Ecology</em></strong> 54:303-312 <a href="https://doi.org/10.1111/1365-2664.12701">doi:10.1111/1365-2664.12701</a></p></li>
-<li><p><strong>Zhang, J.<code>*</code></strong>, Nielsen, S.E., Mao, L.F., Chen, S.B. and Svenning, J-C. 2016. Regional and historical factors supplement current climate in shaping global forest canopy height. <strong><em>Journal of Ecology</em></strong> 104:469-478 <a href="https://doi.org/10.1111/1365-2745.12510">doi:10.1111/1365-2745.12510</a></p></li>
-<li><p><strong>Zhang, J.<code>*</code></strong> 2017. Biodiversity science and macroecology in the era of big data. 大数据时代的生物多样性科学与宏生态学. <strong><em>Biodiversity Science 生物多样性</em></strong> 25:355-363. (In Chinese) <a href="https://doi.org/10.17520/biods.2017037">doi:10.17520/biods.2017037</a></p></li>
+<li><p>Song, H.<code>#</code>, Ordonez, A., Svenning, J-C., Qian, H.,
+Yin, X., Mao, L., Deng, T. and <strong>Zhang, J.<code>*</code></strong>
+Regional disparity in extinction risk: comparison of disjunct plant
+genera between eastern Asia and eastern North America.
+<strong><em>Global Change Biology</em></strong> 27(9): 1904-1914 <a
+href="https://doi.org/10.1111/gcb.15525">doi:10.1111/gcb.15525</a></p></li>
+<li><p>Feng, G., <strong>Zhang, J.<code>*</code></strong>, Girardello,
+M., Pellissier, V., Svenning, J-C. Forest canopy height co-determines
+taxonomic and functional richness, but not functional dispersion of
+mammals and birds globally. <strong><em>Global Ecology and
+Biogeography</em></strong> 29(8):1350-1359 <a
+href="https://doi.org/10.1111/geb.13110">doi:10.1111/geb.13110</a></p></li>
+<li><p><strong>Zhang, J.<code>*</code></strong>, Qian, H., Girardello,
+M., Pellissier, V., Nielsen, S.E. and Svenning, J.-C. 2018. Trophic
+interactions among vertebrate guilds and plants shape global patterns in
+species diversity. <strong><em>Proceedings of the Royal Society B:
+Biological Sciences</em></strong> 285:20180949. <a
+href="https://doi.org/10.1098/rspb.2018.0949">doi:10.1098/rspb.2018.0949</a></p></li>
+<li><p><strong>Zhang, J.<code>*</code></strong>, Nielsen, S.E., Chen,
+Y.H., Georges, D., Qin, Y.C., Wang, S., Svenning, J-C. and Thuiller, W.
+2017. Extinction risk of North American seed plants elevated by climate
+and land-use change. <strong><em>Journal of Applied
+Ecology</em></strong> 54:303-312 <a
+href="https://doi.org/10.1111/1365-2664.12701">doi:10.1111/1365-2664.12701</a></p></li>
+<li><p><strong>Zhang, J.<code>*</code></strong>, Nielsen, S.E., Mao,
+L.F., Chen, S.B. and Svenning, J-C. 2016. Regional and historical
+factors supplement current climate in shaping global forest canopy
+height. <strong><em>Journal of Ecology</em></strong> 104:469-478 <a
+href="https://doi.org/10.1111/1365-2745.12510">doi:10.1111/1365-2745.12510</a></p></li>
+<li><p><strong>Zhang, J.<code>*</code></strong> 2017. Biodiversity
+science and macroecology in the era of big data.
+大数据时代的生物多样性科学与宏生态学. <strong><em>Biodiversity Science
+生物多样性</em></strong> 25:355-363. (In Chinese) <a
+href="https://doi.org/10.17520/biods.2017037">doi:10.17520/biods.2017037</a></p></li>
 </ol>
 <hr>
-<p><strong><span style="color:blue; font-size:18pt">Biodiversity along elevational gradients</span></strong></p>
+<p><strong><span style="color:blue; font-size:18pt">Biodiversity along
+elevational gradients</span></strong></p>
 <p style="font-family: times, serif; font-size:15pt; font-style:italic">
-“Elevational gradients can serve as natural experiments for studies on community and ecosystem processes to long-term changes in climate and as test beds for models about the future of biodiversity in a changing world” — Sundqvist, Sanders, &amp; Wardle (2013)
+“Elevational gradients can serve as natural experiments for studies on
+community and ecosystem processes to long-term changes in climate and as
+test beds for models about the future of biodiversity in a changing
+world” — Sundqvist, Sanders, &amp; Wardle (2013)
 </p>
-<p>Elevational gradients have been served as <span style="color:red">Natural Laboratories</span> for ecological studies. Mountains play critical roles for conserving terrestrial biodiversity, carbon and water. Home to great biodiversity and high levels of endemism, mountains are especially vulnerable to global changes in climate and land uses.</p>
-<p><a href="Pictures/Research-1.jpg" id="id" class="class" width="50%" height="50%"><img src="Pictures/Research-1.jpg" /></a></p>
-<p>Inspired by the early works in elevational gradients, we initialed a regional research network <span style="color:red">BEST (Biodiversity along Elevational gradients: Shifts and Transitions)</span> in 2017, to monitor long-term biodiversity dynamics of multiple taxa (e.g., vascular plants, mosses, soil microbes, and birds) under climate change and land use. Microclimates (temperature and moisture of air and soil) are measured and served as one key element to understand community dynamics across space and time. Some new technologies, such as drones and bioacoustic audio recorders, also plan to use for the monitoring. By collaborating with over 15 research teams with different backgrounds, we have set up over 200 permanant plots in 12 mountains across a large research area mainly in subtropical forest region of China. If you are interested to know more about the ongoing data collection, please visit our website <a href="https://best-mountains.org/" class="uri">https://best-mountains.org/</a>.</p>
+<p>Elevational gradients have been served as <span
+style="color:red">Natural Laboratories</span> for ecological studies.
+Mountains play critical roles for conserving terrestrial biodiversity,
+carbon and water. Home to great biodiversity and high levels of
+endemism, mountains are especially vulnerable to global changes in
+climate and land uses.</p>
+<p><a href="Pictures/Research-1.jpg" id="id" class="class" width="50%"
+height="50%"><img src="Pictures/Research-1.jpg" /></a></p>
+<p>Inspired by the early works in elevational gradients, we initialed a
+regional research network <span style="color:red">BEST (Biodiversity
+along Elevational gradients: Shifts and Transitions)</span> in 2017, to
+monitor long-term biodiversity dynamics of multiple taxa (e.g., vascular
+plants, mosses, soil microbes, and birds) under climate change and land
+use. Microclimates (temperature and moisture of air and soil) are
+measured and served as one key element to understand community dynamics
+across space and time. Some new technologies, such as drones and
+bioacoustic audio recorders, also plan to use for the monitoring. By
+collaborating with over 15 research teams with different backgrounds, we
+have set up over 200 permanant plots in 12 mountains across a large
+research area mainly in subtropical forest region of China. If you are
+interested to know more about the ongoing data collection, please visit
+our website <a href="https://best-mountains.org/"
+class="uri">https://best-mountains.org/</a>.</p>
 <p><span style="font-style:italic">Selected publications:</span></p>
 <ol style="list-style-type: decimal">
-<li><p>Zhang, R.<code>#</code>, Zhang, Z., Shang, K., Zhao, M., Kong, J., Wang, X., Wang, Y., Song, H., Zhang, O., Lv, X., <strong>Zhang, J.<code>*</code></strong>. A taxonomic and phylogenetic perspective on plant community assembly along an elevational gradient in subtropical forests. <strong><em>Journal of Plant Ecology</em></strong> 14(4):702-716 <a href="https://doi.org/10.1093/jpe/rtab026">doi:10.1093/jpe/rtab026</a></p></li>
-<li><p>Wang, X., Zhong, M., <strong>Zhang, J.</strong>, Si, X., Yang, S., Jiang, J., Hu, J.<code>*</code>. Multidimensional amphibian diversity and community structure along a 2600 m elevational gradient on the eastern margin of the Qinghai-Tibetan Plateau. <strong><em>Zoological Research</em></strong> 43(1): 40-51 <a href="https://doi.org/10.24272/j.issn.2095-8137.2021.166">doi:10.24272/j.issn.2095-8137.2021.166</a></p></li>
-<li><p>Qian, H., Hao, Z.Q. and <strong>Zhang, J.</strong> 2014. Phylogenetic structure and phylogenetic diversity of angiosperm assemblages in forests along an elevational gradient in Changbaishan, China. <strong><em>Journal of Plant Ecology</em></strong> 7:154-165 <a href="https://doi.org/10.1093/jpe/rtt072">doi:10.1093/jpe/rtt072</a></p></li>
+<li><p>Ma, S.<code>#</code>, Chen, S., Ding, Y., He, Z., Hu, G., Liu,
+J., Luo, Y., Song, K., Yang, Y., Huang, X., Gao, M., Liu, L., Chen, B.,
+He, X., Lu, X., Lv, B., Ma, L., Meng, Y., Tian, Z., Zhang, H., Zhang,
+X., Zhang, Y., Zhang, Z., <strong>Li, S.<code>*</code></strong>,
+<strong>Zhang, J.<code>*</code></strong>. What controls forest litter
+decomposition? A coordinated distributed teabag experiment across ten
+mountains. <strong><em>Ecography</em></strong> <a
+href="https://doi.org/10.1111/ecog.07339">doi:10.1111/ecog.07339</a>.</p></li>
+<li><p>Wang, X.R.<code>#</code>, Chen, L., Zhang, H.<code>#</code>, Liu,
+P.<code>#</code>, Shang, X.<code>#</code>, Wang, F.<code>#</code>,
+Zhang, Z., Zhao, J.<code>#</code>, Sun, M.<code>#</code>, Chen,
+J.<code>#</code>, <strong>Zhang, J.<code>*</code></strong>. Insect
+herbivory on woody broadleaf seedlings along a subtropical elevational
+gradient supports the resource concentration hypothesis.
+<strong><em>American Journal of Botany</em></strong>, 111(6): e16355 <a
+href="https://doi.org/10.1002/ajb2.16355">doi:10.1002/ajb2.16355</a></p></li>
+<li><p>Ma, L.<code>#</code>, Liu, L.<code>#</code>, Lu,
+Y.<code>#</code>, Chen, L., Zhang, Z.<code>#</code>, Zhang,
+H.<code>#</code>, Wang, X.<code>#</code>, Shu, L.<code>#</code>, Yang,
+Q., Song, Q., Peng, Q., Yu, Z., <strong>Zhang, J.<code>*</code></strong>
+When microclimates meet soil microbes: soil temperature mediates soil
+microbial diversity along an elevational gradient in subtropical
+forests. <strong><em>Soil Biology and Biochemistry</em></strong> 166:
+108566 <a
+href="https://doi.org/10.1016/j.soilbio.2022.108566">doi:10.1016/j.soilbio.2022.108566</a></p></li>
+<li><p>Zhang, R.<code>#</code>, Zhang, Z., Shang, K., Zhao, M., Kong,
+J., Wang, X., Wang, Y., Song, H., Zhang, O., Lv, X., <strong>Zhang,
+J.<code>*</code></strong>. A taxonomic and phylogenetic perspective on
+plant community assembly along an elevational gradient in subtropical
+forests. <strong><em>Journal of Plant Ecology</em></strong>
+14(4):702-716 <a
+href="https://doi.org/10.1093/jpe/rtab026">doi:10.1093/jpe/rtab026</a></p></li>
+<li><p>Wang, X., Zhong, M., <strong>Zhang, J.</strong>, Si, X., Yang,
+S., Jiang, J., Hu, J.<code>*</code>. Multidimensional amphibian
+diversity and community structure along a 2600 m elevational gradient on
+the eastern margin of the Qinghai-Tibetan Plateau.
+<strong><em>Zoological Research</em></strong> 43(1): 40-51 <a
+href="https://doi.org/10.24272/j.issn.2095-8137.2021.166">doi:10.24272/j.issn.2095-8137.2021.166</a></p></li>
+<li><p>Qian, H., Hao, Z.Q. and <strong>Zhang, J.</strong> 2014.
+Phylogenetic structure and phylogenetic diversity of angiosperm
+assemblages in forests along an elevational gradient in Changbaishan,
+China. <strong><em>Journal of Plant Ecology</em></strong> 7:154-165 <a
+href="https://doi.org/10.1093/jpe/rtt072">doi:10.1093/jpe/rtt072</a></p></li>
 </ol>
 <hr>
-<p><strong><span style="color:blue; font-size:18pt">Forest dynamics across space and time</span></strong></p>
+<p><strong><span style="color:blue; font-size:18pt">Forest dynamics
+across space and time</span></strong></p>
 <p style="font-family: times, serif; font-size:15pt; font-style:italic">
-“On the basis of a comprehensive description of locations, it will not be difficult to verify my species lists, and an increase or decrease of species richness in the future will be possible to detect with high certainty” — Josias Braun-Blanquet, 1913 (“基于对一个调查点的详细描述，我们可以在未来重新调查与比较物种组成，进而可以非常准确地监测物种丰富度的变化规律” — 法瑞学派代表人物布朗-布朗喀, 1913)
+“On the basis of a comprehensive description of locations, it will not
+be difficult to verify my species lists, and an increase or decrease of
+species richness in the future will be possible to detect with high
+certainty” — Josias Braun-Blanquet, 1913
+(“基于对一个调查点的详细描述，我们可以在未来重新调查与比较物种组成，进而可以非常准确地监测物种丰富度的变化规律”
+— 法瑞学派代表人物布朗-布朗喀, 1913)
 </p>
-<p>The only thing that remains constant is CHANGE. In biological communities, everything changes over space and time. Long-term biodiversity monitoring is fundamental in ecology and biogeography. Our research group addresses the fundamental questions in forest plant dynamics using the long-term monitoring data in boreal, temperate, subtropical and tropical forests (e.g., Canadian permanent sampling plots, US Forest Inventory Analysis, CTFS-ForestGEO and CForBio).</p>
-<p>Meanwhile, with the huge helps from a lot of senior ecologists and young scholars, we took over five-year enormous efforts to compile the vegetation dynamic data in China’s subtropical and tropical regions. <strong>Vegetation Archive of Subtropical and Tropical regions in China (VAST-China)</strong> is the database composed of many plot (relevé) data on every type of vegetation in China’s subtropical and tropical regions (23°~33°N, 98°~123°E). Until December 2021, VAST-China includes <strong>over 10,000</strong> temporary/permanent sampling plots. For each plot, the information were gathered on both the vegetation composition and physical environment. These data were collected by over 1000 different sources, including personal collections by ourselves and other researchers of East China Normal University, and published books, monographs or journal articles. More details can be found here: <a href="http://www.givd.info/ID/AS-CN-006" class="uri">http://www.givd.info/ID/AS-CN-006</a>.</p>
-<p><a href="Pictures/Research-3.JPG" id="id" class="class" width="50%" height="50%"><img src="Pictures/Research-3.JPG" /></a></p>
+<p>The only thing that remains constant is CHANGE. In biological
+communities, everything changes over space and time. Long-term
+biodiversity monitoring is fundamental in ecology and biogeography. Our
+research group addresses the fundamental questions in forest plant
+dynamics using the long-term monitoring data in boreal, temperate,
+subtropical and tropical forests (e.g., Canadian permanent sampling
+plots, US Forest Inventory Analysis, CTFS-ForestGEO and CForBio).</p>
+<p>Meanwhile, with the huge helps from a lot of senior ecologists and
+young scholars, we took over five-year enormous efforts to compile the
+vegetation dynamic data in China’s subtropical and tropical regions.
+<strong>Vegetation Archive of Subtropical and Tropical regions in China
+(VAST-China)</strong> is the database composed of many plot (relevé)
+data on every type of vegetation in China’s subtropical and tropical
+regions (23°~33°N, 98°~123°E). Until December 2021, VAST-China includes
+<strong>over 10,000</strong> temporary/permanent sampling plots. For
+each plot, the information were gathered on both the vegetation
+composition and physical environment. These data were collected by over
+1000 different sources, including personal collections by ourselves and
+other researchers of East China Normal University, and published books,
+monographs or journal articles. More details can be found here: <a
+href="http://www.givd.info/ID/AS-CN-006"
+class="uri">http://www.givd.info/ID/AS-CN-006</a>.</p>
+<p><a href="Pictures/Research-3.JPG" id="id" class="class" width="50%"
+height="50%"><img src="Pictures/Research-3.JPG" /></a></p>
 <p><span style="font-style:italic">Selected publications:</span></p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Zhang, J.</strong>, Huang, S. and He, F.L.<code>*</code> 2015. Half-century evidence from western Canada shows forest dynamics are primarily driven by competition followed by climate. <strong><em>Proceedings of the National Academy of Sciences of USA</em></strong> 112:4009-1014 <a href="https://doi.org/10.1073/pnas.1420844112">doi: 10.1073/pnas.1420844112</a></p></li>
-<li><p>Zhu, K., <strong>Zhang, J.</strong>, Niu, S.L., Chu, C.J. and Luo, Y.Q. 2018. Limits to growth of forest biomass carbon sink under climate change. <strong><em>Nature Communications</em></strong> 9(1):2709 <a href="https://doi.org/10.1038/s41467-018-05132-5">doi:10.1038/s41467-018-05132-5</a></p></li>
-<li><p><strong>Zhang, J.</strong>, Song, K. and Song, Y.C.<code>*</code> 2020. History of French-Swiss School of phytosociology and its influences on modern vegetation ecology. 法瑞学派的发展历史及其对当代植被生态学的影响 <strong><em>Chinese Journal of Plant Ecology 植物生态学报</em></strong> 44(7):699–714. (In Chinese) <a href="https://doi.org/10.17521/cjpe.2020.0054">doi: 10.17521/cjpe.2020.0054</a></p></li>
+<li><p>Yang, X.<code>#</code>, Angert, A.L., Zuidema, P.A., He, F.,
+Huang, S., Li, S.Z., Li, S.L., Chardon, N.I., <strong>Zhang,
+J.<code>*</code></strong> The role of demographic compensation in
+stabilizing marginal tree populations in North America.
+<strong><em>Ecology Letters</em></strong> 25(7):1676-1689 <a
+href="https://doi.org/10.1111/ELE.14028">doi:10.1111/ELE.14028</a></p></li>
+<li><p><strong>Zhang, J.</strong>, Huang, S. and He, F.L.<code>*</code>
+2015. Half-century evidence from western Canada shows forest dynamics
+are primarily driven by competition followed by climate.
+<strong><em>Proceedings of the National Academy of Sciences of
+USA</em></strong> 112:4009-1014 <a
+href="https://doi.org/10.1073/pnas.1420844112">doi:
+10.1073/pnas.1420844112</a></p></li>
+<li><p>Zhu, K., <strong>Zhang, J.</strong>, Niu, S.L., Chu, C.J. and
+Luo, Y.Q. 2018. Limits to growth of forest biomass carbon sink under
+climate change. <strong><em>Nature Communications</em></strong>
+9(1):2709 <a
+href="https://doi.org/10.1038/s41467-018-05132-5">doi:10.1038/s41467-018-05132-5</a></p></li>
+<li><p><strong>Zhang, J.</strong>, Song, K. and Song, Y.C.<code>*</code>
+2020. History of French-Swiss School of phytosociology and its
+influences on modern vegetation ecology.
+法瑞学派的发展历史及其对当代植被生态学的影响 <strong><em>Chinese Journal
+of Plant Ecology 植物生态学报</em></strong> 44(7):699–714. (In Chinese)
+<a href="https://doi.org/10.17521/cjpe.2020.0054">doi:
+10.17521/cjpe.2020.0054</a></p></li>
 </ol>
 <hr>
-<p><strong><span style="color:blue; font-size:18pt">Drone Ecology and Biodiversity</span></strong></p>
-<p>Spatial ecology has been called as <strong>“The Final Frontier for Ecological Theory”</strong>. Lightweight unmanned aerial vehicles (Drones) are revolutionizing spatial ecology within last decade. Using the drones equipped with visible cameras, LiDAR and hyperspectal sensors, we are collecting a huge amount of data in plant distributions, composition and functional traits. These data is using to evaluate the importance of horizontal and vertical niche difference in determining local and regional biodiversity patterns.</p>
-<p><a href="Pictures/Research-4.jpg" id="id" class="class" width="50%" height="50%"><img src="Pictures/Research-4.jpg" /></a></p>
+<p><strong><span style="color:blue; font-size:18pt">Drone Ecology and
+Biodiversity</span></strong></p>
+<p>Spatial ecology has been called as <strong>“The Final Frontier for
+Ecological Theory”</strong>. Lightweight unmanned aerial vehicles
+(Drones) are revolutionizing spatial ecology within last decade. Using
+the drones equipped with visible cameras, LiDAR and hyperspectal
+sensors, we are collecting a huge amount of data in plant distributions,
+composition and functional traits. These data is using to evaluate the
+importance of horizontal and vertical niche difference in determining
+local and regional biodiversity patterns.</p>
+<p><a href="Pictures/Research-4.jpg" id="id" class="class" width="50%"
+height="50%"><img src="Pictures/Research-4.jpg" /></a></p>
 <p><span style="font-style:italic">Selected publications:</span></p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Zhang, J.<code>*</code></strong>, Hu, J.B.<code>*</code>, Lian, J.Y., Fan, Z.J., Ouyang, X. and Ye, W.H. 2016. Seeing the forest from drones: Testing the potential of lightweight UAVs as a tool for long-term forest monitoring. <strong><em>Biological Conservation</em></strong> 198:60-69 <a href="https://doi.org/10.1016/j.biocon.2016.03.027">doi:10.1016/j.biocon.2016.03.027</a></p></li>
-<li><p>Kong, J.X., Zhang, Z.C. and <strong>Zhang, J.</strong> 2019. Classification and identification of plant species based on multi-source remote sensing data: Research progress and prospect. 基于多源遥感数据的植物物种分类与识别：研究进展与展望. <strong><em>Biodiversity Science 生物多样性</em></strong> 27:796–812. (In Chinese) <a href="https://doi.org/10.17520/biods.2019197">doi: 10.17520/biods.2019197</a></p></li>
-<li><p>Zhang, Z., Hu, J., Yang, Q., Lian, J., Li, B., Wang, X., Ye, W., <strong>Zhang, J.<code>*</code></strong> 2021. An unmanned aerial vehicle visible light remote sensing image dataset of four forest dynamic plots in subtropical China. 中国亚热带4个森林动态监测样地无人机可见光遥感影像数据集__<em>Biodiversity Science 生物多样性</em>__ 29(9):1181-1185. (In Chinese) <a href="https://doi.org/10.17520/biods.2021299">doi: 10.17520/biods.2021299</a></p></li>
+<li><p>Chen, J.<code>#</code>, Li, W., Junker, T., Da, H., Zhang, Z.,
+Hu, J., Yang, Q., Wang, X., Qin, Y., Shen, G., Shu, L., <strong>Zhang,
+J.<code>*</code></strong>. Detecting forest canopy gaps using UAV RGB
+imagery in a species-rich subtropical forest. <strong><em>Remote Sensing
+in Ecology and Conservation</em></strong>, 9(5): 671-686 <a
+href="https://doi.org/10.1002/rse2.336">doi:10.1002/rse2.336</a></p></li>
+<li><p><strong>Zhang, J.<code>*</code></strong>, Hu, J.B.<code>*</code>,
+Lian, J.Y., Fan, Z.J., Ouyang, X. and Ye, W.H. 2016. Seeing the forest
+from drones: Testing the potential of lightweight UAVs as a tool for
+long-term forest monitoring. <strong><em>Biological
+Conservation</em></strong> 198:60-69 <a
+href="https://doi.org/10.1016/j.biocon.2016.03.027">doi:10.1016/j.biocon.2016.03.027</a></p></li>
+<li><p>Kong, J.X., Zhang, Z.C. and <strong>Zhang, J.</strong> 2019.
+Classification and identification of plant species based on multi-source
+remote sensing data: Research progress and prospect.
+基于多源遥感数据的植物物种分类与识别：研究进展与展望.
+<strong><em>Biodiversity Science 生物多样性</em></strong> 27:796–812.
+(In Chinese) <a href="https://doi.org/10.17520/biods.2019197">doi:
+10.17520/biods.2019197</a></p></li>
+<li><p>Zhang, Z., Hu, J., Yang, Q., Lian, J., Li, B., Wang, X., Ye, W.,
+<strong>Zhang, J.<code>*</code></strong> 2021. An unmanned aerial
+vehicle visible light remote sensing image dataset of four forest
+dynamic plots in subtropical China.
+中国亚热带4个森林动态监测样地无人机可见光遥感影像数据集__<em>Biodiversity
+Science 生物多样性</em>__ 29(9):1181-1185. (In Chinese) <a
+href="https://doi.org/10.17520/biods.2021299">doi:
+10.17520/biods.2021299</a></p></li>
 </ol>
 <hr style="border:2px solid pink">
 </hr>
@@ -354,19 +543,61 @@ $(document).ready(function () {
 <div id="research-grants" class="section level2">
 <h2>Research Grants</h2>
 <ul>
-<li><p>2021-2024 Research Grant from NSFC (Natural Science Foundation of China) on biodiversity along elevational gradients（国家自然科学基金面上项目“森林垂直结构和微气候对植物多样性海拔梯度格局的影响机制”）(<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2021-2025 Research Grant from NSFC (Natural Science Foundation of China) on biodiversity and ecosystem functioning（国家自然科学基金重点项目“海岛植物多样性与生态系统功能关系的维持机制”）(<strong>Co-PI: Jian Zhang</strong>)</p></li>
-<li><p>2021-2023 Research Grant from the Natural Science Foundation of Shanghai on biodiversity along elevational gradients（上海自然科学基金面上项目“长江流域山地植物多样性的联网研究”）(<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2017-2020 Research Grant from NSFC (Natural Science Foundation of China) on drone ecology（国家自然科学基金面上项目“基于小型无人机的森林冠层监测及其对理解物种共存机制的贡献”）(<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2016-2019 Research Grant from Overseas High-level Talents Program (海外高层次人才引进项目)(<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2016-2021 Research Grant from Zijiang Excellent Scholar Award Program, East China Normal University (华东师范大学紫江优秀青年入选者)(<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2017-2019 Research Grant from NSFC on community ecology (国家自然科学基金青年科学基金项目“负密度制约在维持亚热带森林不同演替阶段植物多样性中的重要性”)(<strong>PI: Lan Liu</strong>)</p></li>
-<li><p>2018-2020 Research Grant from China Postdoctoral Science Foundation (中国博士后科学基金第63批面上项目)(<strong>PI: Lan Liu</strong>)</p></li>
-<li><p>2016-2017 Research Grant from Shanghai Key Lab for Urban Ecological Processes and Eco-Restoration (上海市城市化生态过程与生态恢复重点实验室开放课题“城市化过程中人类活动对土壤微生物群落多样性的影响—以上海市为例”)(<strong>PI: Lan Liu</strong>)</p></li>
-<li><p>2019-2020 Research Grant from ECNU (华东师范大学科研基础研究专项)(<strong>PI: Zhaochen Zhang</strong>)</p></li>
-<li><p>2014-2015 CTFS Research Grant, “See forests from drones: testing the potentials of drones in CTFS long-term monitoring network”, Center for Tropical Forest Science (CTFS), Smithsonian Tropical Research Institute (<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2014-2017 Research Grant from Key Laboratory of Forest Ecology and Management, Chinese Academy of Sciences, “Toward a synthetic understanding of biodiversity-rarity relationship of vascular plant species in Changbai Mountain”, Institute of Applied Ecology (IAE), Chinese Academy of Sciences (<strong>PI: Jian Zhang</strong>)</p></li>
-<li><p>2008-2009 CTFS Research Grant, “The role of seed morphology on seed dispersal and forest regeneration in a 25 ha old-growth temperate forest plot”, Center for Tropical Forest Science (CTFS), Smithsonian Tropical Research Institute (<strong>PI: Jian Zhang</strong>)</p></li>
+<li><p>2024- Research Grant from Yat-Sen Excellent Scholar Award
+Program, Sun Yat-Sen University (中山大学逸仙优秀学者入选者)(<strong>PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2023-2027 Research Grant from the Innovation Program of Shanghai
+Municipal Education
+Commission（上海市教育委员会科研创新计划重大项目“亚热带森林生物多样性与碳汇协同提升机制”）(<strong>PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2021-2024 Research Grant from NSFC (Natural Science Foundation of
+China) on biodiversity along elevational
+gradients（国家自然科学基金面上项目“森林垂直结构和微气候对植物多样性海拔梯度格局的影响机制”）(<strong>PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2021-2025 Research Grant from NSFC (Natural Science Foundation of
+China) on biodiversity and ecosystem
+functioning（国家自然科学基金重点项目“海岛植物多样性与生态系统功能关系的维持机制”）(<strong>Co-PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2021-2023 Research Grant from the Natural Science Foundation of
+Shanghai on biodiversity along elevational
+gradients（上海自然科学基金面上项目“长江流域山地植物多样性的联网研究”）(<strong>PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2017-2020 Research Grant from NSFC (Natural Science Foundation of
+China) on drone
+ecology（国家自然科学基金面上项目“基于小型无人机的森林冠层监测及其对理解物种共存机制的贡献”）(<strong>PI:
+Jian Zhang</strong>)</p></li>
+<li><p>2016-2019 Research Grant from Overseas High-level Talents Program
+(海外高层次人才引进项目)(<strong>PI: Jian Zhang</strong>)</p></li>
+<li><p>2016-2021 Research Grant from Zijiang Excellent Scholar Award
+Program, East China Normal University
+(华东师范大学紫江优秀青年入选者)(<strong>PI: Jian
+Zhang</strong>)</p></li>
+<li><p>2017-2019 Research Grant from NSFC on community ecology
+(国家自然科学基金青年科学基金项目“负密度制约在维持亚热带森林不同演替阶段植物多样性中的重要性”)(<strong>PI:
+Lan Liu</strong>)</p></li>
+<li><p>2018-2020 Research Grant from China Postdoctoral Science
+Foundation (中国博士后科学基金第63批面上项目)(<strong>PI: Lan
+Liu</strong>)</p></li>
+<li><p>2016-2017 Research Grant from Shanghai Key Lab for Urban
+Ecological Processes and Eco-Restoration
+(上海市城市化生态过程与生态恢复重点实验室开放课题“城市化过程中人类活动对土壤微生物群落多样性的影响—以上海市为例”)(<strong>PI:
+Lan Liu</strong>)</p></li>
+<li><p>2019-2020 Research Grant from ECNU
+(华东师范大学科研基础研究专项)(<strong>PI: Zhaochen
+Zhang</strong>)</p></li>
+<li><p>2014-2015 CTFS Research Grant, “See forests from drones: testing
+the potentials of drones in CTFS long-term monitoring network”, Center
+for Tropical Forest Science (CTFS), Smithsonian Tropical Research
+Institute (<strong>PI: Jian Zhang</strong>)</p></li>
+<li><p>2014-2017 Research Grant from Key Laboratory of Forest Ecology
+and Management, Chinese Academy of Sciences, “Toward a synthetic
+understanding of biodiversity-rarity relationship of vascular plant
+species in Changbai Mountain”, Institute of Applied Ecology (IAE),
+Chinese Academy of Sciences (<strong>PI: Jian Zhang</strong>)</p></li>
+<li><p>2008-2009 CTFS Research Grant, “The role of seed morphology on
+seed dispersal and forest regeneration in a 25 ha old-growth temperate
+forest plot”, Center for Tropical Forest Science (CTFS), Smithsonian
+Tropical Research Institute (<strong>PI: Jian Zhang</strong>)</p></li>
 </ul>
 </div>
 
