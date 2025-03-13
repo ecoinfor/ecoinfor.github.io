@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>中国常绿阔叶林系统表</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><p style="color:darkgreen;font-weight:bold;font-size:20px">Biodiversity and Ecoinformatics Group</p></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">HOME</a>
+</li>
+<li>
+  <a href="people.html">TEAM</a>
+</li>
+<li>
+  <a href="research.html">RESEARCH</a>
+</li>
+<li>
+  <a href="publications.html">PUBLICATIONS</a>
+</li>
+<li>
+  <a href="teach.html">TEACHING</a>
+</li>
+<li>
+  <a href="gallery.html">GALLERY</a>
+</li>
+<li>
+  <a href="opportunities.html">JOIN THE LAB</a>
+</li>
+<li>
+  <a href="cn.html">中文</a>
+</li>
+<li>
+  <a href="library.html">LIBRARY</a>
+</li>
+<li>
+  <a href="Data.html">DATA</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">中国常绿阔叶林系统表</h1>
+
+</div>
+
+
+<style>
+/* 科学分类折叠系统 */
+details {
+  margin-left: 2em;
+  border-left: 1px solid #eee;
+}
+ 
+details > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+}
+ 
+details > summary::-webkit-details - marker {
+  display: none;
+}
+ 
+details > summary:before {
+  content: "▸";
+  position: absolute;
+  left: -1.2em;
+  transition: transform 0.2s;
+}
+ 
+details[open] > summary:before {
+  transform: rotate(90deg);
+}
+ 
+/* 分类标签样式 */
+.sys - tier {
+  display: block;
+  font-family: "等线";
+  font-weight: 500;
+}
+ 
+.tier1 {
+  color: #1a237e;
+  font-size: 2.2em;
+  border-bottom: 2px solid;
+}
+ 
+.tier2 {
+  color: #283593;
+  font-size: 1.8em;
+}
+ 
+.tier3 {
+  color: #3949ab;
+  font-size: 1.6em;
+}
+ 
+.tier4 {
+  color: #5c6bc0;
+  font-size: 1.4em;
+}
+ 
+.tier5 {
+  color: #7986cb;
+  font-size: 1.2em;
+}
+ 
+.tier6 {
+  color: #9fa8da;
+  font-size: 1em;
+}
+ 
+.latin {
+  font-family: Consolas;
+  color: #757575;
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+</style>
+<details open>
+<summary>
+<span class="sys - tier tier1">I. 典型常绿阔叶林群系</span><span
+class="latin">Typical evergreen broad-leaved forests Formation</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier2">IA. 东亚典型常绿阔叶林群落门</span><span
+class="latin">East Asia typical EBLF Division =Lithocarpodo -
+Cyclobalanopsiea</span>
+</summary>
+<details close>
+<summary>
+<span class="sys - tier tier3">IA-1. 大陆东部典型常绿阔叶林</span><span
+class="latin">Camellio cuspidatae - Cyclobalanopsietea glaucae</span>
+</summary>
+<!-- 柯 - 青冈群落目 -->
+<details open>
+<summary>
+<span class="sys - tier tier4">1. 柯-青冈群落目</span><span
+class="latin">Lithocarpodo - Cyclobalanopsietalia</span>
+</summary>
+<details close>
+<summary>
+<h5>
+1A. 东南丘陵群团组<span class="sys - code">Alliance group of
+Southeastern Hills</span>
+</h5>
+</summary>
+<!-- 1号群团 -->
+<details open>
+<summary>
+<h6>
+1）苦槠-柯-青冈群团<span class="sys - code"> Castanopsis sclerophylla -
+Lithocarpus glaber - Cyclobalanopsis glauca All.</span>
+</h6>
+</summary>
+<div>
+分布：长江中下游丘陵 |
+包含11个群丛和5个群落，以及只见名称未见记录的3个群落（附表1）
+</div>
+<details open>
+<summary>
+<h7>A1）篌竹-豆梨/青冈群丛<span class="sys - code"> Pyrus calleryana-
+Phyllostachys nidularia ∕Cyclobalanopsis glauca Ass.</span></h7>
+</summary>
+<div>
+见于上海大金山（EBLF书中表5-4∕1-6；曾称：篌竹/青冈群落）
+</div>
+</details>
+<details open>
+<summary>
+<h7>A2）假黑鳞耳蕨-冬青/苦槠群丛<span class="sys - code"> Polystichum
+pseudo-makinoi-Ilex purpurea ∕ Castanopsis sclerophylla Ass.</span></h7>
+</summary>
+<div>
+见于苏州、上海附近丘陵地段（EBLF书中表5-8a；曾称：冬青/苦槠群落)
+</div>
+</details>
+<details open>
+<summary>
+<h7>A3）水竹-檵木/苦槠群丛<span class="sys - code"> Phyllostachys
+heteroclada- Loropetalum chinense ∕ Castanopsis sclerophylla
+Ass./span&gt;</h7>
+</summary>
+<div>
+见于安徽黄山、贵池、歙县、旌德（EBLF书中表5-9a；曾称：檵木/苦槠群丛)
+</div>
+</details>
+</details>
+<!-- 2号群团 -->
+<details open>
+<summary>
+<h6>
+2）赤皮青冈-小叶青冈群团<span class="sys - code">Cyclobalanopsis gilva -
+Cyclobalanopsis myrsinaefolia All.</span>
+</h6>
+</summary>
+<div>
+分布：浙江、安徽南部山地 | 包含1个群丛和2个群落（详见附表2）
+</div>
+</details>
+<!-- 3号群团 -->
+<details open>
+<summary>
+<h6>
+3）云山青冈-细叶青冈群团<span class="sys - code">Cyclobalanopsis
+sessilifolia - Cyclobalanopsis gracilis All.</span>
+</h6>
+</summary>
+<div>
+分布：浙江、江西、福建交界山地 | 包含2个群丛和10个群落（详见附表3）
+</div>
+</details>
+<!-- 4号群团 -->
+<details open>
+<summary>
+<h6>
+4）褐叶青冈团<span class="sys - code">Cyclobalanopsis stewardiana
+All.</span>
+</h6>
+</summary>
+<div>
+分布：安徽南部、浙江西部山地 | 包含1个群丛和1个群落（详见附表4）
+</div>
+</details>
+<!-- 5号群团 -->
+<details open>
+<summary>
+<h6>
+5）曼青冈 - 多脉青群团<span class="sys - code">Cyclobalanopsis oxyodon -
+Cyclobalanopsis multinervis All.</span>
+</h6>
+</summary>
+<div>
+分布：浙江、江西、湖南部分山地 | 包含5个群落（详见附表5）
+</div>
+</details>
+</details>
+<details close>
+<summary>
+<h5>
+1B. 南岭和秦巴山地群团组<span class="sys - code">Alliance group of
+Nanling &amp; Qinba Mountains</span>
+</h5>
+</summary>
+<details open>
+<summary>
+<h6>
+6）巴东栎 - 包果柯群团<span class="sys - code">Quercus engleriana -
+Lithocarpus cleistocarpus All.</span>
+</h6>
+</summary>
+<div>
+分布：四川、贵州、云南等地的秦巴山地及周边 | 包含3个群落（详见附表6）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+7）南岭山地柯群团<span class="sys - code">Nanling montane Lithocarpus
+All.</span>
+</h6>
+</summary>
+<div>
+分布：南岭山脉及其周边地区 | 包含7个群落（详见附表7）
+</div>
+</details>
+</details>
+</details>
+<!-- 木荷 - 锥群落目 -->
+<details open>
+<summary>
+<span class="sys - tier tier4">2. 木荷 - 锥群落目</span><span
+class="latin">Schimo - Castanopsietalia</span>
+</summary>
+<details close>
+<summary>
+<h5>
+2A. 东部丘陵山地群团组<span class="sys - code">Alliance group of Eastern
+Hills mountains</span>
+</h5>
+</summary>
+<details open>
+<summary>
+<h6>
+8）木荷-甜槠群团<span class="sys - code">Schima superba - Castanopsis
+eyrie All</span>
+</h6>
+</summary>
+<div>
+分布：我国东南丘陵地区 | 包含多个群丛和群落（详见附表8）
+</div>
+<details open>
+<summary>
+<h6>
+8a）木荷-甜槠群团 - 江南丘陵群丛组
+</h6>
+</summary>
+<div>
+包含13个群丛，2个群落（详见附表8a）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+8b）木荷-甜槠群团 - 闽粤山地群丛组
+</h6>
+</summary>
+<div>
+包含2个群丛，6个群落（详见附表8b）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+8c）木荷-甜槠群团 - 黔桂山地群丛组
+</h6>
+</summary>
+<div>
+包含16个群落（需校对核实，详见附表8c）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<h6>
+9）银木荷-甜槠群团<span class="sys - code">Castanopsis eyrie - Schima
+argentea All</span>
+</h6>
+</summary>
+<div>
+分布：湖南、江西、广西等地 | 包含3个群丛和5个群落（详见附表9）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+10）甜槠-细柄蕈树群团<span class="sys - code">Castanopsis eyrei -
+Altingia grcilipes All.</span>
+</h6>
+</summary>
+<div>
+分布：福建、浙江、江西等地 | 包含12个群落（详见附表10）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+11）米槠-栲树群团<span class="sys - code">Castanopsis carlesii -
+Castanopsis fargesii All.</span>
+</h6>
+</summary>
+<div>
+分布：我国南方多省山地 | 包含多个群丛和群落（详见相关附表）
+</div>
+<details open>
+<summary>
+<h6>
+11a）米槠-栲树群团-江南丘陵群丛组
+</h6>
+</summary>
+<div>
+包含2个群丛和4个群落（详见附表11a）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+11b）米槠-栲树群团-闽粤丘陵山地群丛组
+</h6>
+</summary>
+<div>
+包含1个群丛和8个群落（详见附表11b）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+11c）米槠-栲树群团-黔桂山地群丛组
+</h6>
+</summary>
+<div>
+包含1个群丛和8个群落（详见附表11c）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<h6>
+12）钩锥群团<span class="sys - code">Castanopsis tibetana All.</span>
+</h6>
+</summary>
+<div>
+分布：福建、江西、湖南等地山地 | 包含11个群落（详见附表12）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+13）毛锥-鹿角锥-罗浮锥群团<span class="sys - code">Castanopsis fordii -
+C. lomontii - C. fabri All</span>
+</h6>
+</summary>
+<div>
+分布：湖南、福建、广西等地山地 | 包含22个群落（待补和整理，详见附表13）
+</div>
+</details>
+</details>
+<details close>
+<summary>
+<h5>
+2B. 木荷-锥群落目：四川盆地团组<span class="sys - code">Alliance group
+of Sichuan Basin ）</span>
+</h5>
+</summary>
+<details open>
+<summary>
+<h6>
+14）四川大头茶-短刺米槠-栲树群团<span class="sys - code">Gordonia
+acuminata - Castanopsis fargesii - C.carlesii var. spinulosa All.</span>
+</h6>
+</summary>
+<div>
+分布：重庆、贵州部分山地 | 包含多个群落（详见相关附表）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+15）华木荷 - 钝齿木荷 - 扁刺锥群团<span class="sys - code">Schima
+sinensis - Schima crenata - Castanopsis platycantha All.</span>
+</h6>
+</summary>
+<div>
+分布：云南、四川部分山地 | 包含多个群丛和群落（详见相关附表）
+</div>
+</details>
+</details>
+</details>
+<!-- 樟 - 润楠群落目 -->
+<details open>
+<summary>
+<span class="sys - tier tier4">3. 樟-润楠群落目</span><span
+class="latin">Cinnamomo - Machiletalia</span>
+</summary>
+<details close>
+<summary>
+<h5>
+3A. 樟-润楠群落目:东南丘陵群团组<span class="sys - code">Alliance group
+of Eastern Hills and Mountains</span>
+</h5>
+</summary>
+<details open>
+<summary>
+<h6>
+16）天竺桂-红楠群团<span class="sys - code">Cinnamomum japonicum -
+Machilus thunbergii All.</span>
+</h6>
+</summary>
+<div>
+分布：上海、浙江、湖南等地 | 包含11个群落（详见附表16）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+17）紫楠 - 薄叶润楠群团<span class="sys - code">Phoebe sheareri -
+Machilus leptophylla All.</span>
+</h6>
+</summary>
+<div>
+分布：安徽、浙江、广西等地 | 记录到3个群落（详见附表17）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+18）闽楠 - 刨花润楠群团<span class="sys - code">Phoebe bournei -
+Machilus pauhoi All.</span>
+</h6>
+</summary>
+<div>
+分布：湖南、福建、广西等地 | 记录到5个群落（详见附表18）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+19）深山含笑群团<span class="sys - code">Michelia maudiae All.</span>
+</h6>
+</summary>
+<div>
+分布：浙江、江西等地 |
+记录到相关群落（具体数量及详情待补充，可能涉及附表）
+</div>
+</details>
+</details>
+<details close>
+<summary>
+<h5>
+3B. 樟-润楠群落目：四川盆地群团组<span class="sys - code">Alliance group
+of Sichuan Basin</span>
+</h5>
+</summary>
+<details open>
+<summary>
+<h6>
+20）利川润楠 - 宜昌润楠 - 竹叶润楠群团<span class="sys - code">Machilus
+lichuanensis - Machilus ichangensis - Phoebe fabrei All.</span>
+</h6>
+</summary>
+<div>
+分布：湖南、湖北等地 | 记录到3个群落（详见附表20）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+21）细叶楠 - 楠木群团<span class="sys - code">Phoebe hui - Phoebe
+zhennan.</span>
+</h6>
+</summary>
+<div>
+分布：峨眉山等地 | 记录到2个群落（详见附表21）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+22）山楠 - 油樟 - 银叶桂群团<span class="sys - code">Phoebe chinensis -
+Cinnamomum longepaniculatum – C. mairei All.</span>
+</h6>
+</summary>
+<div>
+分布：四川卧龙等地 | 记录到3个群落（详见附表22）
+</div>
+</details>
+</details>
+</details>
+</details>
+<!-- 大陆西部典型常绿阔叶林 -->
+<details close>
+<summary>
+<span class="sys - tier tier3">IA-2. 大陆西部典型常绿阔叶林</span><span
+class="latin">Myrsina africanae - Cyclobalanopsietea glaucoides</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">4. 锥 - 滇青冈群落目<span
+class="sys - code">Castanopsio - Cyclobalanopsietalia glaucoidis</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+23）元江锥 - 滇青冈群团<span class="sys - code">Castanopsis orthacantha
+- Cyclobalanopsis glaucoides All.</span>
+</h5>
+</summary>
+<div>
+分布：云南昆明、玉溪等地 | 包含5个群丛，3个群落（详见附表23）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+24）高山锥 - 黄毛青冈群团<span class="sys - code">Castanopsis delavayi -
+Cyclobalanopsis delavayi All.</span>
+</h5>
+</summary>
+<div>
+分布：云南昆明、禄劝等地 | 包含3个群丛，1个群落（详见附表24）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+25）毛叶青冈 - 毛枝青冈群团<span class="sys - code">Cyclobalanopsis
+kerrii - C.hefleriana All.</span>
+</h5>
+</summary>
+<div>
+分布：相关地区 | 包含3个群落（详见附表25）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">5. 箭竹 - 柯群落目<span
+class="sys - code">Fargesio - Lithocarpodoetalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+26）白穗柯 - 麻子壳柯群团 <span class="sys - code">Lithocarpus
+craibianus - Lithocarpus variolosus All.</span>
+</h5>
+</summary>
+<div>
+分布：云南禄劝等地 | 目前包含1个群丛，3个群落（详见附表26）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+27）刺壳柯 - 壶壳柯群团 <span class="sys - code">Lithocarpus
+echinotholus - Lithocarpus echinophorus All.</span>
+</h5>
+</summary>
+<div>
+分布：云南临沧等地 | 目前记录到3个群落（详见附表27）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+28）木果柯 - 水仙柯 - 截果柯群团 <span class="sys - code">Lithocarpus
+xylocarpus - Lithocarpus naiadarum - Lithocarpus truncatus All.</span>
+</h5>
+</summary>
+<div>
+分布：云南景东、西畴等地 | 目前记录到2个群丛3个群落（详见附表28）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">6. 薄片青冈 - 俅江青冈 -
+通麦栎群落目<span class="sys - code">Cyclobalanopsio lamellosae -
+kiukianggensie - Quercetalia lanatae</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+29）薄片青冈 - 俅江青冈 - 通麦栎群团<span
+class="sys - code">Cyclobalanopsis lamellose - C. kiukiangensis -
+Quercus lanata All. ）</span>
+</h5>
+</summary>
+<div>
+分布：相关地区（具体待明确） | 包含4群落（详见附表29）
+</div>
+</details>
+</details>
+</details>
+<!-- 台湾山地典型常绿阔叶林 -->
+<details close>
+<summary>
+<span class="sys - tier tier3">IA-3. 台湾山地典型常绿阔叶林</span><span
+class="latin">Litsio acuminatae - Cyclobalanopsietea longinucis</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">7. 昆栏树-青冈群落目<span
+class="sys - code">Trochodendro aralioidis - Cyclobalanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+30）台湾窄叶青冈 - 台湾青冈群团 <span class="sys - code">Cyclobalanopsis
+stenophylloides - Cy. morii - All.）</span>
+</h5>
+</summary>
+<div>
+分布：台湾插天山、达观山等地 | 1个群丛，5个群落（详见附表30）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+31）云山青冈 - 长果青冈群团 <span class="sys - code">Cyclobalanopsis
+sessilifolia - Cy. longinux All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾太鲁阁等地 | 包含1个群丛，5个群落（详见附表31）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">8. 杜英 - 柯 - 锥群落目<span
+class="sys - code">Elaeocarpo - Lithocarpodo - Castanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+32）长叶木姜子 - 米槠群团 <span class="sys - code">Litsea acuminata -
+Castanopsis carlesii All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾南横公路等地 | 含7个群落（详见相关附表）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+33）鬼石柯 - 油叶柯 - 杏叶柯 - 齿叶柯群团 <span
+class="sys - code">Lithocarpus lepidocarpus - L. konishii - L.
+amygdalifolius - L.kawakamii All.）</span>
+</h5>
+</summary>
+<div>
+分布：台湾南澳南溪等地 | （见附表33，相关群丛和群落详情待补充）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">9. 樟 - 台琼楠 - 润楠群落目<span
+class="sys - code">Cinnamomo - Beilschmiedio - Machilietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+34）沉水樟 - 台琼楠 - 润楠群团<span class="sys - code">Cinnamomum
+micranthum - Beilschmiedia erythrophloia - Machilus All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾雪山坑溪等地 | 包含9个群落（详见附表34）
+</div>
+</details>
+</details>
+</details>
+</details>
+</details>
+<!-- 季节常绿阔叶林群系 -->
+<details open>
+<summary>
+<span class="sys - tier tier1">II. 季节常绿阔叶林群系</span><span
+class="latin">Seasonal evergreen broad - leaved forests Formation</span>
+</summary>
+<!-- 按相同结构构建 -->
+<details open>
+<summary>
+<span class="sys - tier tier2">IIA. 东亚季节常绿阔叶林群落门<span
+class="latin">East Asia Seasonal EBLF Division =Machilo -
+Castanopsiea</span>
+</summary>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIA-1. 大陆东部季节常绿阔叶林<span
+class="latin">Cryptocaryo chinensii - Castanopsietea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">10. 马蹄荷-厚壳桂-锥群落目<span
+class="sys - code">Exbucklandio - Cryptocaryo - Castanopsietalia</span>
+</h4>
+</summary>
+<details close>
+<summary>
+<h5>
+35）厚壳桂-锥树-红锥群团 <span class="sys - code">Cryptocarya -
+Castanopsis chinensis - C.hystrix All.</span>
+</h5>
+</summary>
+<div>
+分布：广东、广西等地 | 分2群丛组（详见附表35）
+</div>
+<details open>
+<summary>
+<h6>
+AG - 1厚壳桂 - 红锥群丛组
+</h6>
+</summary>
+<div>
+包含1个群丛，9个群落（详见附表35a）
+</div>
+</details>
+<details open>
+<summary>
+<h6>
+AG - 2黄果果厚壳桂锥树群丛组
+</h6>
+</summary>
+<div>
+包含8个群落（详见附表35b）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<h5>
+36）大果马蹄荷 - 粘木 - 蕈树群团<span class="sys - code">Exbucklandia
+tonkinensis - Ixonanthes chinensis - Altingia chinensis All.</span>
+</h5>
+</summary>
+<div>
+分布：广东封开等地 | 包含5个群落（详见附表36）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+37）吊皮锥群团 <span class="sys - code">Castanopsis kawakamii
+All.</span>
+</h5>
+</summary>
+<div>
+分布：福建、广西等地 | 该群团包括1个群丛，7个群落（详见附表37）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+38）黧蒴锥群团 <span class="sys - code">Castanopsis fissa All.</span>
+</h5>
+</summary>
+<div>
+分布：湖南、福建、广西等地 | 该群团包含9个群落（详见附表38）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">11. 樟 - 琼楠 - 润楠群落目 <span
+class="sys - code">Cinnamomumo - Beilschmiedio –Machilietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+39）大叶新木姜子 - 黄樟 - 樟树群团<span class="sys - code">Neolitsea
+levinei - Cinnamomum parthenoxylon - Cinnamomum camphora All</span>
+</h5>
+</summary>
+<div>
+分布：香港、广西等地 | 目前记录6个群落（详见附表39）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+40）琼楠 - 润楠 - 华润楠群团<span class="sys - code">Beilschmiedia -
+Machilus - Machilus chinensis All</span>
+</h5>
+</summary>
+<div>
+分布：广东、江西、广西等地 | 目前包含8个群落（详见附表40）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+41）鹅掌柴 - 假苹婆 - 红楠群团<span class="sys - code">Schefflera
+octophylla - Sterculia lanceolata / Machilus thunbergii All.</span>
+</h5>
+</summary>
+<div>
+分布：香港等地 | 目前记录到6个群落（详见附表41）
+</div>
+</details>
+</details>
+</details>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIA-2. 大陆西部季节常绿阔叶林<span
+class="latin">Machilo kurzii - Castanopsietea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">12. 西南木荷-柯-锥群落目<span
+class="sys - code">Schimo walichii - Lithocarpodo -
+Castanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+42）西南木荷-印锥-红锥群团 <span class="sys - code">Castanopsis indica -
+C. hystrix All.</span>
+</h5>
+</summary>
+<div>
+分布：云南景东、勐海等地 | 目前包含6个群落（详见附表42）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">13. 异叶鹅掌柴 - 秃枝润楠群落目<span
+class="sys - code">Schefflero diversifoliolatae Machiletalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+43）栲树-秃枝润楠群团 <span class="sys - code">Castanopsis fargesii -
+Machilus kurzi All.</span>
+</h5>
+</summary>
+<div>
+分布：云南西畴等地 | 目前记录到1个群丛（详见附表43）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">14. 细青皮-锥群落目<span
+class="sys - code">Altingio excelsae - Castanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+44）细青皮 - 红锥 - 短刺锥群团<span class="sys - code">Altingia excelsa
+- Castanopsis hystrix - Castanopsis echidnocarpa All.</span>
+</h5>
+</summary>
+<div>
+分布：西藏墨脱等地 | 包含3个群落（详见附表44）
+</div>
+</details>
+</details>
+</details>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIA-3.
+台湾季节常绿阔叶林：多枝紫金牛-香润楠-锥群落纲<span
+class="latin">Ardisio sieboldii - Machilo zuihoensi -
+Castanopsietea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">15. 山香圆 - 润楠 - 锥群落目<span
+class="sys - code">Turpinio –Machilio - Castanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+45）米槠 - 白校攒 - 淋漓锥群团<span class="sys - code">C. carlesii - C.
+carlesii var. sessile - Castanopsis uraiana All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾莲花池等地 | 目前包含1个群丛，3个群落(详见附表45)
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+46）香润楠 - 台湾山龙眼 - 台湾山香园群团<span
+class="sys - code">Machilus zuihoensis - Helicia formosana - Turpinia
+formosana All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾台中、台东等地 | 包含6个群落（详见附表46）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">16. 青冈 - 木荷 - 大头茶群落目<span
+class="sys - code">Cyclobalanopsio - Schimo - Gordonietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+47）郭氏长果青冈 - 圆果青冈群团<span class="sys - code">Cyclobalanopsis
+longinux var. koui –Cy. Globosa All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾南澳南溪等地 | 包含1个群丛，1个群落(详见附表47)
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+48）山榄 - 大头茶 - 星刺锥 - 港口木荷群团<span class="sys - code">Schima
+superba var. kankoensis - Gordonia axillaris - Castanopsis stellato -
+spina All.）</span>
+</h5>
+</summary>
+<div>
+分布：台湾佳洛水、南仁山等地 | 目前包含5个群落(详见附表48)
+</div>
+</details>
+</details>
+</details>
+</details>
+</details>
+<!-- 适雨常绿阔叶林群系 -->
+<details open>
+<summary>
+<span class="sys - tier tier1">III．适雨常绿阔叶林群系</span><span
+class="latin">Ombrophilous evergreen broad-leaved forest
+Formation</span>
+</summary>
+<!-- 按相同结构构建 -->
+<details open>
+<summary>
+<span class="sys - tier tier2">IIIA. 东亚适雨常绿阔叶林群落门<span
+class="latin">East Asia Ombrophilous EBLF Division =
+Fico-Machiliea</span>
+</summary>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIIA-1.
+大陆东部适雨常绿阔叶林：山蒲桃-榕-锥群落纲<span class="latin">Syzygio
+levinei - Fico- Castanopsietea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">17. 山蒲桃-锥群落目<span
+class="sys - code">Syzygio levinei-Castanopsietalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+49）淋漓锥-红锥群团 <span class="sys - code">Castanopsis uraiana-
+Castanopsis hystrix All.</span>
+</h5>
+</summary>
+<div>
+分布：广东、广西等地 | 分2群丛组（详见附表35）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+50）山蒲桃群团<span class="sys - code">Syzygium levinei All.</span>
+</h5>
+</summary>
+<div>
+分布：广东封开等地 | 包含5个群落（详见附表36）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">18. 榕-水翁群落目 <span
+class="sys - code">Ficuo microcarpae- Cleistocaletalia
+operculatis</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+51）鱼尾葵-水翁群团<span class="sys - code"> Caryota ochlandra
+-Cleistocalyx operculatus All.</span>
+</h5>
+</summary>
+<div>
+分布：香港、广西等地 | 目前记录6个群落（详见附表39）
+</div>
+</details>
+<details open>
+<summary>
+<h5>
+52）榕树群团<span class="sys - code"> Ficus microcarpa All.</span>
+</h5>
+</summary>
+<div>
+分布：广东、江西、广西等地 | 目前包含8个群落（详见附表40）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">19. 黄桐-土沉香-假苹婆群落目 <span
+class="sys - code"> Endospermumo- Aquilarrio -Sterculetalia
+lanceolatae</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+53）黄桐-土沉香-假苹婆群团<span class="sys - code"> Endospermum
+chinense- Aquilaria sinensis-Sterculia lanceolata All.</span>
+</h5>
+</summary>
+<div>
+分布：香港等地 | 目前记录到6个群落（详见附表41）
+</div>
+</details>
+</details>
+</details>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIIA-2.大陆西部适雨常绿阔叶林：四角蒲桃-青冈-柯群落纲<span
+class="latin">Syzygio tetragono - Cyclobalanopsio
+-Lithocarpodetea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">20. 四角蒲桃-柯群落目<span
+class="sys - code">Syzygio tetragono-Lithocarpodetalia</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+54）球壳柯-厚鳞柯群团 <span class="sys - code">Lithocarpus
+sphaerocarpus- L. pachylepis All.</span>
+</h5>
+</summary>
+<div>
+分布：云南景东、勐海等地 | 目前包含6个群落（详见附表42）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">21. 盆架树-红锥群落目<span
+class="sys - code">Alstonio rostratae –Castanopsietalia hystrexi</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+55）盆架树-红锥群团 <span class="sys - code">Alstonia
+pachucarpa-Castanopsis hystrix All.</span>
+</h5>
+</summary>
+<div>
+分布：云南西畴等地 | 目前记录到1个群丛（详见附表43）
+</div>
+</details>
+</details>
+<details open>
+<summary>
+<span class="sys - tier tier4">22. 川滇木莲-栎子青冈群落目<span
+class="sys - code">Manglietio duclouxii –Cyclobalanopsietalia
+blake</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+56）川滇木莲-栎子青冈群团<span class="sys - code">Manglietia duclouxii
+-Cyclobalanopsis blakei All.</span>
+</h5>
+</summary>
+<div>
+分布：西藏墨脱等地 | 包含3个群落（详见附表44）
+</div>
+</details>
+</details>
+</details>
+<details close>
+<summary>
+<span class="sys - tier tier3">IIIA-3.
+台湾适雨常绿阔叶林：蒲桃-榕-润楠群落纲<span class="latin">Syzygio
+euphlebium- Fico-Machiletea</span>
+</summary>
+<details open>
+<summary>
+<span class="sys - tier tier4">23. 榕-大叶楠群落目<span
+class="sys - code">ico-Machilietalia kusanoi</span>
+</h4>
+</summary>
+<details open>
+<summary>
+<h5>
+57）山棕- 糙叶榕-大叶楠群团<span class="sys - code">Arenga engleri-
+Ficus irisana-Machilus kusanoi All.</span>
+</h5>
+</summary>
+<div>
+分布：台湾莲花池等地 | 目前包含1个群丛，3个群落(详见附表45)
+</div>
+</details>
+</details>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+
+
+
+<hr>
+<center>
+Copyright © <a href="mailto:jzhang@des.ecnu.edu.cn">Jian Zhang</a> 2019 –
+<script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script>
+<div class="line-block">Created using <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">rmarkdown</a></div>
+</center>
+
+
+</body>
+</html>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
